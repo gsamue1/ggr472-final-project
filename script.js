@@ -15,34 +15,35 @@ const map = new mapboxgl.Map({
 /*--------------------------------------------------------------------
 Setting Up Collisions Geojson Variable
 --------------------------------------------------------------------*/
-//Empty variable to store Collision Data Responses from Fetch Function 
-let collis_geojson;
+// //Empty variable to store Collision Data Responses from Fetch Function 
+// let foodresources_geojson;
 
-// Fetch GeoJSON from URL and store response
-fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/pedcyc_collision_06-21.geojsonn')
-    .then(response => response.json())
-    .then(response => {
-        console.log(response); //Check response in console
-        collis_geojson = response; // Store geojson as variable using URL from fetch response
-    });
+// // Fetch GeoJSON from URL and store response
+// fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/GGR472_accessible_food_test.geojson')
+//     .then(response => response.json())
+//     .then(response => {
+//         console.log(response); //Check response in console
+//         foodresources_geojson = response; // Store geojson as variable using URL from fetch response
+//     });
 
-//MAPPING TEST DATA - Add datasource using GeoJSON variable
-map.addSource('collisions', {
+//MAPPING FOOD LOCATIONS - Add datasource using GeoJSON variable
+map.on('load', () => {
+map.addSource('food', {
     type: 'geojson',
-    data: collis_geojson
+    data: 'https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/GGR472_accessible_food_test.geojson',
 });
 
-//MAPPING TEST DATA - Set style for when new points are added to the data source
+//MAPPING FOOD LOCATIONS - Set style for when new points are added to the data source
 map.addLayer({
-    'id': 'collisions-points',
+    'id': 'food-locations',
     'type': 'circle',
-    'source': 'collisions',
+    'source': 'food',
     'paint': {
         'circle-radius': 5,
         'circle-color': 'blue'
     }
 });
-
+});
 
 // /*--------------------------------------------------------------------
 // ADDING MAP CONTROLS
@@ -73,34 +74,34 @@ document.getElementById('returnbutton').addEventListener('click', () => {
     });
 });
 
-//Filtering for Bike Lanes
-document.getElementById('collisionscheck').addEventListener('change', (e) => {
-    map.setLayoutProperty( // change the visiblity of the layer of data
-        'collisions-points',
-        'visibility',
-        e.target.checked ? 'visible' : 'none'
-    )
-});
+// //Filtering for Bike Lanes
+// document.getElementById('foodbankscheck').addEventListener('change', (e) => {
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'food-locations',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
 
 // /*--------------------------------------------------------------------
 // CONFIGURING POP-UPS
 // --------------------------------------------------------------------*/
-// Code Sourced: Mapbox https://docs.mapbox.com/mapbox-gl-js/example/popup-on-hover/ 
-    //HEXGRIDS
-    //Creating Pop-Up Variable     
-        map.on('click', 'collisions-points', (e) => {
-            new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML("<strong>Number of Collisions</strong>" +  "<br>" + e.features[0].properties.COUNT) // EDIT
-            .addTo(map);
-            });
+// // Code Sourced: Mapbox https://docs.mapbox.com/mapbox-gl-js/example/popup-on-hover/ 
+//     //HEXGRIDS
+//     //Creating Pop-Up Variable     
+//         map.on('click', 'collisions-points', (e) => {
+//             new mapboxgl.Popup()
+//             .setLngLat(e.lngLat)
+//             .setHTML("<strong>Number of Collisions</strong>" +  "<br>" + e.features[0].properties.COUNT) // EDIT
+//             .addTo(map);
+//             });
              
-            // Change the cursor to a pointer when the mouse is over the layer
-            map.on('mouseenter', 'collisions-points', () => {
-            map.getCanvas().style.cursor = 'pointer';
-            });
+//             // Change the cursor to a pointer when the mouse is over the layer
+//             map.on('mouseenter', 'collisions-points', () => {
+//             map.getCanvas().style.cursor = 'pointer';
+//             });
              
-            // Change the cursor back to a pointer
-            map.on('mouseleave', 'collisions-points', () => {
-            map.getCanvas().style.cursor = '';
-            });
+//             // Change the cursor back to a pointer
+//             map.on('mouseleave', 'collisions-points', () => {
+//             map.getCanvas().style.cursor = '';
+//             });
