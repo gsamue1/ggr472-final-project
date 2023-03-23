@@ -87,15 +87,15 @@ document.getElementById('returnbutton').addEventListener('click', () => {
         //     .addTo(map);
         //     });
              
-        //     // Change the cursor to a pointer when the mouse is over the layer
-        //     map.on('mouseenter', 'food-locations', () => {
-        //     map.getCanvas().style.cursor = 'pointer';
-        //     });
+            // Change the cursor to a pointer when the mouse is over the layer
+            map.on('mouseenter', 'food-locations', () => {
+            map.getCanvas().style.cursor = 'pointer';
+            });
              
-        //     // Change the cursor back to a pointer
-        //     map.on('mouseleave', 'food-locations', () => {
-        //     map.getCanvas().style.cursor = '';
-        //     });
+            // Change the cursor back to a pointer
+            map.on('mouseleave', 'food-locations', () => {
+            map.getCanvas().style.cursor = '';
+            });
 
 // /*--------------------------------------------------------------------
 // Filtering Service Type
