@@ -13,24 +13,24 @@ const map = new mapboxgl.Map({
 });
 
 /*--------------------------------------------------------------------
-Setting Up Collisions Geojson Variable
+Setting Up Accessible Food Geojson Variable
 --------------------------------------------------------------------*/
 // //Empty variable to store Collision Data Responses from Fetch Function 
-// let foodresources_geojson;
+let foodresources_geojson;
 
-// // Fetch GeoJSON from URL and store response
-// fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/GGR472_accessible_food_test.geojson')
-//     .then(response => response.json())
-//     .then(response => {
-//         console.log(response); //Check response in console
-//         foodresources_geojson = response; // Store geojson as variable using URL from fetch response
-//     });
+// Fetch GeoJSON from URL and store response
+fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/GGR472_accessible_food_test.geojson')
+    .then(response => response.json())
+    .then(response => {
+        console.log(response); //Check response in console
+        foodresources_geojson = response; // Store geojson as variable using URL from fetch response
+    });
 
 //MAPPING FOOD LOCATIONS - Add datasource using GeoJSON variable
 map.on('load', () => {
 map.addSource('food', {
     type: 'geojson',
-    data: 'https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/GGR472_accessible_food_test.geojson',
+    data: foodresources_geojson,
 });
 
 //MAPPING FOOD LOCATIONS - Set style for when new points are added to the data source
@@ -40,7 +40,8 @@ map.addLayer({
     'source': 'food',
     'paint': {
         'circle-radius': 5,
-        'circle-color': 'blue'
+        'circle-color': 'red',
+        'circle-stroke-color': 'black'
     }
 });
 });
@@ -74,34 +75,54 @@ document.getElementById('returnbutton').addEventListener('click', () => {
     });
 });
 
-// //Filtering for Bike Lanes
-// document.getElementById('foodbankscheck').addEventListener('change', (e) => {
-//     map.setLayoutProperty( // change the visiblity of the layer of data
-//         'food-locations',
-//         'visibility',
-//         e.target.checked ? 'visible' : 'none'
-//     )
-// });
-
 // /*--------------------------------------------------------------------
 // CONFIGURING POP-UPS
 // --------------------------------------------------------------------*/
-// // Code Sourced: Mapbox https://docs.mapbox.com/mapbox-gl-js/example/popup-on-hover/ 
-//     //HEXGRIDS
-//     //Creating Pop-Up Variable     
-//         map.on('click', 'collisions-points', (e) => {
-//             new mapboxgl.Popup()
-//             .setLngLat(e.lngLat)
-//             .setHTML("<strong>Number of Collisions</strong>" +  "<br>" + e.features[0].properties.COUNT) // EDIT
-//             .addTo(map);
-//             });
+// Code Sourced: Mapbox https://docs.mapbox.com/mapbox-gl-js/example/popup-on-hover/ 
+    //Creating Pop-Up Variable for Food Bank Locations   
+        // map.on('click', 'food-locations', (e) => {
+        //     new mapboxgl.Popup()
+        //     .setLngLat(e.lngLat)
+        //     .setHTML(e.feature[0].properties.USER_name) 
+        //     .addTo(map);
+        //     });
              
-//             // Change the cursor to a pointer when the mouse is over the layer
-//             map.on('mouseenter', 'collisions-points', () => {
-//             map.getCanvas().style.cursor = 'pointer';
-//             });
+        //     // Change the cursor to a pointer when the mouse is over the layer
+        //     map.on('mouseenter', 'food-locations', () => {
+        //     map.getCanvas().style.cursor = 'pointer';
+        //     });
              
-//             // Change the cursor back to a pointer
-//             map.on('mouseleave', 'collisions-points', () => {
-//             map.getCanvas().style.cursor = '';
-//             });
+        //     // Change the cursor back to a pointer
+        //     map.on('mouseleave', 'food-locations', () => {
+        //     map.getCanvas().style.cursor = '';
+        //     });
+
+// /*--------------------------------------------------------------------
+// Filtering Service Type
+// --------------------------------------------------------------------*/
+// Filter for Food Banks
+
+// Filter for Takeout Meals
+
+// Filter for Sit Down Meal Programmes
+
+// Filter for Education and Community Programming
+
+// Filter for Food Programming 
+
+// /*--------------------------------------------------------------------
+// Filtering Open Time 
+// --------------------------------------------------------------------*/
+// Filter for Monday
+
+// Filter for Tuesday
+
+// Filter for Wednesday
+
+// Filter for Thursday 
+
+// Filter for Friday
+
+// Filter for Saturday
+
+// Filter for Sunday
