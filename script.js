@@ -40,7 +40,7 @@ map.addLayer({
     'source': 'food',
     'paint': {
         'circle-radius': 5,
-        'circle-color': 'red',
+        'circle-color': 'blue',
         'circle-stroke-color': 'black'
     }
 });
