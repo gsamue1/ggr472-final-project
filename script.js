@@ -19,7 +19,7 @@ Setting Up Accessible Food Geojson Variable
 let foodresources_geojson;
 
 // Fetch GeoJSON from URL and store response
-fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/GGR472_accessible_food_test.geojson')
+fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/food_support_locations_clean.geojson')
     .then(response => response.json())
     .then(response => {
         console.log(response); //Check response in console
