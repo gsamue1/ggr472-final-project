@@ -33,16 +33,69 @@ map.addSource('food', {
     data: foodresources_geojson,
 });
 
-//MAPPING FOOD LOCATIONS - Set style for when new points are added to the data source
+//MAPPING FOOD BANKS - Set style for when new points are added to the data source
 map.addLayer({
-    'id': 'food-locations',
+    'id': 'food_banks',
     'type': 'circle',
     'source': 'food',
     'paint': {
         'circle-radius': 5,
         'circle-color': 'blue',
         'circle-stroke-color': 'black'
-    }
+    },
+    'filter': ['==', ['get', 'USER_food_'], 'Yes']
+});
+
+//MAPPING TAKEOUT LOCATIONS - Set style for when new points are added to the data source
+map.addLayer({
+    'id': 'takeout_meals',
+    'type': 'circle',
+    'source': 'food',
+    'paint': {
+        'circle-radius': 5,
+        'circle-color': 'red',
+        'circle-stroke-color': 'black'
+    },
+    'filter': ['==', ['get', 'USER_takeo'], 'Yes']
+});
+
+//MAPPING SIT-DOWN MEALS - Set style for when new points are added to the data source
+map.addLayer({
+    'id': 'sit_meals',
+    'type': 'circle',
+    'source': 'food',
+    'paint': {
+        'circle-radius': 5,
+        'circle-color': 'yellow',
+        'circle-stroke-color': 'black'
+    },
+    'filter': ['==', ['get', 'USER_meal_'], 'Yes']
+});
+
+//MAPPING COMMUNITY PROGRAMS - Set style for when new points are added to the data source
+map.addLayer({
+    'id': 'community_programs',
+    'type': 'circle',
+    'source': 'food',
+    'paint': {
+        'circle-radius': 5,
+        'circle-color': 'purple',
+        'circle-stroke-color': 'black'
+    },
+    'filter': ['==', ['get', 'USER_commu'], 'Yes']
+});
+
+//MAPPING COMMUNITY GARDENS AND FRIDGES - Set style for when new points are added to the data source
+map.addLayer({
+    'id': 'fridge_gardens',
+    'type': 'circle',
+    'source': 'food',
+    'paint': {
+        'circle-radius': 5,
+        'circle-color': 'green',
+        'circle-stroke-color': 'black'
+    },
+    'filter': ['==', ['get', 'USER_com_1'], 'Yes']
 });
 });
 
@@ -88,7 +141,7 @@ document.getElementById('returnbutton').addEventListener('click', () => {
         //     });
              
             // Change the cursor to a pointer when the mouse is over the layer
-            map.on('mouseenter', 'food-locations', () => {
+            map.on('mouseenter', 'food_locations', () => {
             map.getCanvas().style.cursor = 'pointer';
             });
              
@@ -101,14 +154,49 @@ document.getElementById('returnbutton').addEventListener('click', () => {
 // Filtering Service Type
 // --------------------------------------------------------------------*/
 // Filter for Food Banks
+document.getElementById('foodbankcheck').addEventListener('change', (e) => {
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'food_banks',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
 
 // Filter for Takeout Meals
+document.getElementById('takeoutcheck').addEventListener('change', (e) => {
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'takeout_meals',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
 
 // Filter for Sit Down Meal Programmes
+document.getElementById('mealprogcheck').addEventListener('change', (e) => {
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'sit_meals',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
 
 // Filter for Education and Community Programming
+document.getElementById('educheck').addEventListener('change', (e) => {
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'community_programs',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
 
-// Filter for Food Programming 
+// Filter for Community Gardens or Kitchens 
+document.getElementById('resourcecheck').addEventListener('change', (e) => {
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'fridge_gardens',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
 
 // /*--------------------------------------------------------------------
 // Filtering Open Time 
