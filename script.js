@@ -248,17 +248,17 @@ document.getElementById('moncheck').addEventListener('change', (e) => {
 
     if (sitdown) {
         layers.push('sit_meals');
-        fields.push('USER_');
+        fields.push('USER_meal_');
     }
 
     if (commprog) {
         layers.push('community_programs');
-        fields.push('USER_');
+        fields.push('USER_commu');
     }
 
     if (commgardfrid) {
         layers.push('fridge_gardens');
-        fields.push('USER_');
+        fields.push('USER_com_1');
     }
 
     layers.forEach((layer, i) => {
