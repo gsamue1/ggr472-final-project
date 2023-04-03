@@ -273,8 +273,8 @@ document.getElementById('moncheck').addEventListener('change', (e) => {
             ['==', ['get', field], 'Yes']])
         
     });
- 
 
+    
 });
 
 // ('fridge_gardens', b, c, d, e)

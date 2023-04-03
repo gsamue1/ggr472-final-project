@@ -23,6 +23,7 @@
     left: 2%;
     margin: 10px 0 0 10px; /*top margin, right margin, bottom margin, left margin*/
     padding: 10px; /*around elements inside of overlay*/
+    max-width: fit-content;
     overflow: visible;
 }
 
@@ -43,6 +44,7 @@
   margin: 10px 0 0 10px;
   padding: 10px;
   overflow: visible;
+  max-width: fit-content;
   z-index: 1;
 }
 
@@ -57,6 +59,7 @@
   margin: 10px 0 0 10px;
   padding: 10px;
   overflow: visible;
+  max-width: fit-content;
   z-index: 1;
 }
 
