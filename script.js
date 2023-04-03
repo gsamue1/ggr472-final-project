@@ -34,13 +34,26 @@ map.addSource('food', {
 });
 
 //MAPPING FOOD BANKS - Set style for when new points are added to the data source
+
 map.addLayer({
     'id': 'food_banks',
     'type': 'circle',
     'source': 'food',
     'paint': {
-        'circle-radius': 5,
-        'circle-color': 'blue',
+        'circle-radius': 6,
+        'circle-color': 'blue',    
+        'circle-stroke-color': 'black'
+    },
+    'filter': ['==', ['get', 'service_typ'], ';']
+});
+
+map.addLayer({
+    'id': 'food_banks',
+    'type': 'circle',
+    'source': 'food',
+    'paint': {
+        'circle-radius': 6,
+        'circle-color': 'blue',    
         'circle-stroke-color': 'black'
     },
     'filter': ['==', ['get', 'USER_food_'], 'Yes']
@@ -65,7 +78,7 @@ map.addLayer({
     'type': 'circle',
     'source': 'food',
     'paint': {
-        'circle-radius': 5,
+        'circle-radius': 4,
         'circle-color': 'yellow',
         'circle-stroke-color': 'black'
     },
@@ -78,7 +91,7 @@ map.addLayer({
     'type': 'circle',
     'source': 'food',
     'paint': {
-        'circle-radius': 5,
+        'circle-radius': 3,
         'circle-color': 'purple',
         'circle-stroke-color': 'black'
     },
@@ -91,7 +104,7 @@ map.addLayer({
     'type': 'circle',
     'source': 'food',
     'paint': {
-        'circle-radius': 5,
+        'circle-radius': 2,
         'circle-color': 'green',
         'circle-stroke-color': 'black'
     },
@@ -153,8 +166,15 @@ document.getElementById('returnbutton').addEventListener('click', () => {
 // /*--------------------------------------------------------------------
 // Filtering Service Type
 // --------------------------------------------------------------------*/
+let foodbank = true;
+let takeout = true;
+let sitdown = true;
+let commprog = true;
+let commgardfrid = true;
+
 // Filter for Food Banks
 document.getElementById('foodbankcheck').addEventListener('change', (e) => {
+   foodbank = !foodbank;
     map.setLayoutProperty( // change the visiblity of the layer of data
         'food_banks',
         'visibility',
@@ -164,6 +184,7 @@ document.getElementById('foodbankcheck').addEventListener('change', (e) => {
 
 // Filter for Takeout Meals
 document.getElementById('takeoutcheck').addEventListener('change', (e) => {
+    takeout = !takeout;
     map.setLayoutProperty( // change the visiblity of the layer of data
         'takeout_meals',
         'visibility',
@@ -173,6 +194,7 @@ document.getElementById('takeoutcheck').addEventListener('change', (e) => {
 
 // Filter for Sit Down Meal Programmes
 document.getElementById('mealprogcheck').addEventListener('change', (e) => {
+    sitdown = !sitdown;
     map.setLayoutProperty( // change the visiblity of the layer of data
         'sit_meals',
         'visibility',
@@ -182,6 +204,7 @@ document.getElementById('mealprogcheck').addEventListener('change', (e) => {
 
 // Filter for Education and Community Programming
 document.getElementById('educheck').addEventListener('change', (e) => {
+    commprog = !commprog;
     map.setLayoutProperty( // change the visiblity of the layer of data
         'community_programs',
         'visibility',
@@ -191,6 +214,7 @@ document.getElementById('educheck').addEventListener('change', (e) => {
 
 // Filter for Community Gardens or Kitchens 
 document.getElementById('resourcecheck').addEventListener('change', (e) => {
+    commgardfrid = !commgardfrid;
     map.setLayoutProperty( // change the visiblity of the layer of data
         'fridge_gardens',
         'visibility',
@@ -202,6 +226,69 @@ document.getElementById('resourcecheck').addEventListener('change', (e) => {
 // Filtering Open Time 
 // --------------------------------------------------------------------*/
 // Filter for Monday
+document.getElementById('moncheck').addEventListener('change', (e) => {
+
+    let layers = [];
+    let fields = [];
+
+    let checked = 'No';
+    if(e.target.checked) {
+        checked = 'Yes'
+    }
+
+    if (foodbank) {
+        layers.push ('food_banks');
+        fields.push('USER_food_')
+    }
+
+    if (takeout) {
+        layers.push('takeout_meals');
+        fields.push('USER_takeo');
+    }
+
+    if (sitdown) {
+        layers.push('sit_meals');
+        fields.push('USER_');
+    }
+
+    if (commprog) {
+        layers.push('community_programs');
+        fields.push('USER_');
+    }
+
+    if (commgardfrid) {
+        layers.push('fridge_gardens');
+        fields.push('USER_');
+    }
+
+    layers.forEach((layer, i) => {
+        console.log(layer)
+        let field = fields[i]
+
+        map.setFilter(layer, 
+            ['all',
+            ['==', ['get', 'USER_monda'], checked],
+            ['==', ['get', field], 'Yes']])
+        
+        
+    });
+ 
+
+});
+
+// ('fridge_gardens', b, c, d, e)
+
+// //Check each layer to filter for the day of the week 
+
+// document.getElementById('mondaycheck').addEventListener('change', (e) => {
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         ['==' [get,  'monday'], 'Yes'],
+//         frideg_gardens,
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
 
 // Filter for Tuesday
 
