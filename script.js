@@ -225,6 +225,8 @@ document.getElementById('resourcecheck').addEventListener('change', (e) => {
 // /*--------------------------------------------------------------------
 // Filtering Open Time 
 // --------------------------------------------------------------------*/
+
+
 // Filter for Monday
 document.getElementById('moncheck').addEventListener('change', (e) => {
 
@@ -269,7 +271,6 @@ document.getElementById('moncheck').addEventListener('change', (e) => {
             ['all',
             ['==', ['get', 'USER_monda'], checked],
             ['==', ['get', field], 'Yes']])
-        
         
     });
  
