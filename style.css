@@ -16,7 +16,7 @@
 
 /* Overlay Search Formatting */
 .map-overlay-search {
-    position: absolute;
+    position: relative;
     font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     background: rgba(255, 255, 255, 0.8);
     top: 8%;
@@ -34,7 +34,7 @@
 
 /* Filter Service Type Overlay */
 .filter-service-box {
-  position: absolute;
+  position: relative;
   font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background: rgba(255, 255, 255, 0.8);
   width: 260px;
@@ -48,7 +48,7 @@
 
 /* Filter Overlay */
 .filter-time-box {
-  position: absolute;
+  position: relative;
   font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background: rgba(255, 255, 255, 0.8);
   width: 260px;
