@@ -138,7 +138,7 @@ document.getElementById('returnbutton').addEventListener('click', () => {
     let layers_pop = ['food_banks','takeout_meals','sit_meals','community_programs','fridge_gardens'];
 
 //Creating Pop-Up Variable for Food Bank Locations
-        map.on('click', ['food_banks','takeout_meals','sit_meals','community_programs','fridge_gardens'], (e) => {
+        map.on('click', layers_pop, (e) => {
             console.log(e);   //e is the event info triggered and is passed to the function as a parameter (e)
             //Explore console output using Google DevTools
 
@@ -175,8 +175,6 @@ document.getElementById('returnbutton').addEventListener('click', () => {
                 .addTo(map);
             });
         
-           
-
             // Change the cursor to a pointer when the mouse is over the layer
             map.on('mouseenter', layers_pop, () => {
             map.getCanvas().style.cursor = 'pointer';
