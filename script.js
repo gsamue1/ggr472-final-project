@@ -162,16 +162,16 @@ document.getElementById('returnbutton').addEventListener('click', () => {
 
             var pop_up = new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML("<b" + name + "</b>" 
-                    + '<br>' + 'Address: ' + address_name + address_details + ", " + postal_code
-                    + '<br>' + 'Services: ' + services
-                    + '<br>' + 'Operating Hours: ' + hours
-                    + '<br>' + 'Appointment Required: ' + appt
-                    + '<br>' + 'Residency Requirements: ' + res_req + " (" + res_req_details + ")"
-                    + '<br>' + 'Target Group: ' + target
-                    + '<br>' + 'Website: ' + '<a href="' + website + '">' + '</a>'
-                    + '<br>' + 'Contact: ' + contact
-                    + '<br>' + 'Wheelchair Accessible: ' + access)
+                .setHTML("<b>" + name + "</b>" 
+                    + '<br>' + "<b>" + 'Address: ' + "</b>" + address_name + address_details + ", " + postal_code
+                    + '<br>' + "<b>" + 'Services: ' + "</b>" + services
+                    + '<br>' + "<b>" + 'Operating Hours: ' + "</b>" + hours
+                    + '<br>' + "<b>" + 'Appointment Required: ' + "</b>" + appt
+                    + '<br>' + "<b>" + 'Residency Requirements: ' + "</b>" + res_req + " (" + res_req_details + ")"
+                    + '<br>' + "<b>" + 'Target Group: ' + "</b>" + target
+                    + '<br>' + "<b>" + 'Website: ' + "</b>" + '<a href="' + website + '">' + '</a>'
+                    + '<br>' + "<b>" + 'Contact: ' + "</b>" + contact
+                    + '<br>' + "<b>" + 'Wheelchair Accessible: ' + "</b>" + access)
                 .addTo(map);
             });
         
