@@ -49,7 +49,7 @@
                 "USER_requi": "No",
                 "USER_targe": "Pregnant teens and young mothers 13-21 years who need support with housing, parenting, relationships, returning to school",
                 "USER_acces": "No",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -202,7 +202,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -406,7 +406,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -508,7 +508,7 @@
                 "USER_requi": "No",
                 "USER_targe": "Homeless and runaway youth 16-24 years",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -559,7 +559,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -610,7 +610,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -661,7 +661,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -712,7 +712,7 @@
                 "USER_requi": "Yes",
                 "USER_targe": "Parents and Families",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -763,7 +763,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -814,7 +814,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Unknown",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -865,7 +865,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Unknown",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -967,7 +967,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Unknown",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1018,7 +1018,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Unknown",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1069,7 +1069,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Unknown",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1120,7 +1120,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1171,7 +1171,7 @@
                 "USER_requi": "No",
                 "USER_targe": "Women and men 16 years and older living with HIV infection or AIDS\r",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1273,7 +1273,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1375,7 +1375,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1426,7 +1426,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1477,7 +1477,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Unknown",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1579,7 +1579,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1681,7 +1681,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1834,7 +1834,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": null,
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1885,7 +1885,7 @@
                 "USER_requi": "No",
                 "USER_targe": "Muslim Community",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1936,7 +1936,7 @@
                 "USER_requi": "Yes",
                 "USER_targe": "Muslim Seniors",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -1987,7 +1987,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -2038,7 +2038,7 @@
                 "USER_requi": "Yes",
                 "USER_targe": "Women; Indigenous Women",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -2701,7 +2701,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -2803,7 +2803,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Unknown",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -2956,7 +2956,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -3160,7 +3160,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "No",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -3313,7 +3313,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -3517,7 +3517,7 @@
                 "USER_requi": "No",
                 "USER_targe": "Aboriginal coomunities",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -3619,7 +3619,7 @@
                 "USER_requi": "Yes",
                 "USER_targe": "Toronto Metropolitan University students, faculty, and staff only",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -3670,7 +3670,7 @@
                 "USER_requi": "Yes",
                 "USER_targe": "People living with HIV/AIDS, including children, women and transwomen, men and transmen\r",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -3772,7 +3772,7 @@
                 "USER_requi": "Yes",
                 "USER_targe": "Individuals and families who are vegan, strict vegetarians, or who are actively transitioning to a meat-free diet\r",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -3823,7 +3823,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -3874,7 +3874,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -3925,7 +3925,7 @@
                 "USER_requi": "Yes",
                 "USER_targe": "University of Toronto students only",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -4027,7 +4027,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Unknown",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -4231,7 +4231,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -4282,7 +4282,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -4333,7 +4333,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -4384,7 +4384,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -4435,7 +4435,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -4486,7 +4486,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
@@ -4537,7 +4537,7 @@
                 "USER_requi": "No",
                 "USER_targe": "All",
                 "USER_acces": "Yes",
-                "USER_res_1": null
+                "USER_res_1": "N/A"
             },
             "geometry": {
                 "type": "Point",
