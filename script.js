@@ -44,18 +44,6 @@ map.addLayer({
         'circle-color': 'blue',    
         'circle-stroke-color': 'black'
     },
-    'filter': ['==', ['get', 'service_typ'], ';']
-});
-
-map.addLayer({
-    'id': 'food_banks',
-    'type': 'circle',
-    'source': 'food',
-    'paint': {
-        'circle-radius': 6,
-        'circle-color': 'blue',    
-        'circle-stroke-color': 'black'
-    },
     'filter': ['==', ['get', 'USER_food_'], 'Yes']
 });
 
@@ -144,24 +132,69 @@ document.getElementById('returnbutton').addEventListener('click', () => {
 // /*--------------------------------------------------------------------
 // CONFIGURING POP-UPS
 // --------------------------------------------------------------------*/
-// Code Sourced: Mapbox https://docs.mapbox.com/mapbox-gl-js/example/popup-on-hover/ 
-    //Creating Pop-Up Variable for Food Bank Locations   
-        // map.on('click', 'food-locations', (e) => {
-        //     new mapboxgl.Popup()
-        //     .setLngLat(e.lngLat)
-        //     .setHTML(e.feature[0].properties.USER_name) 
-        //     .addTo(map);
-        //     });
-             
+// Code Sourced: Mapbox https://docs.mapbox.com/mapbox-gl-js/example/popup-on-hover/   
+
+//Creating Layer Array for Pop Up Functions -- Ensure Pop-Ups are enabled for all layers
+    let layers_pop = ['food_banks','takeout_meals','sit_meals','community_programs','fridge_gardens'];
+
+//Creating Pop-Up Variable for Food Bank Locations
+        map.on('click', ['food_banks','takeout_meals','sit_meals','community_programs','fridge_gardens'], (e) => {
+            console.log(e);   //e is the event info triggered and is passed to the function as a parameter (e)
+            //Explore console output using Google DevTools
+
+        // Defining Pop Up Variable
+            let name = e.features[0].properties.USER_name;
+            let address_name = e.features[0].properties.USER_addre;
+            let address_details = e.features[0].properties.USER_add_1;
+            let postal_code = e.features[0].properties.USER_posta;
+            let services = e.features[0].properties.USER_servi;
+            let hours = e.features[0].properties.USER_hours;
+            let appt = e.features[0].properties.USER_appoi;
+            let res_req = e.features[0].properties.USER_resid;
+            let res_req_details = e.features[0].properties.USER_res_1;
+            let website = e.features[0].properties.USER_servi;
+            let contact = e.features[0].properties.USER_conta;
+            let access = e.features[0].properties.USER_acces;
+            let target = e.features[0].properties.USER_targe;
+
+        //Variable testing 
+           console.log(name);
+
+            var pop_up = new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML("<b" + name + "</b>" 
+                    + '<br>' + 'Address: ' + address_name + address_details + ", " + postal_code
+                    + '<br>' + 'Services: ' + services
+                    + '<br>' + 'Operating Hours: ' + hours
+                    + '<br>' + 'Appointment Required: ' + appt
+                    + '<br>' + 'Residency Requirements: ' + res_req + " (" + res_req_details + ")"
+                    + '<br>' + 'Target Group: ' + target
+                    + '<br>' + 'Website: ' + '<a href="' + website + '">' + '</a>'
+                    + '<br>' + 'Contact: ' + contact
+                    + '<br>' + 'Wheelchair Accessible: ' + access)
+                .addTo(map);
+            });
+        
+           
+
             // Change the cursor to a pointer when the mouse is over the layer
-            map.on('mouseenter', 'food_locations', () => {
+            map.on('mouseenter', layers_pop, () => {
             map.getCanvas().style.cursor = 'pointer';
             });
              
             // Change the cursor back to a pointer
-            map.on('mouseleave', 'food-locations', () => {
+            map.on('mouseleave', layers_pop, () => {
             map.getCanvas().style.cursor = '';
             });
+
+
+//     var feature = features[0];
+
+//   var popup = new mapboxgl.Popup({ offset: [0, -15] })
+//         .setLngLat(feature.geometry.coordinates)
+//         .setHTML('<h3>' + feature.properties.Company + '</h3><p>' + feature.properties.City + '</p>' + feature.properties.URL + '</p>')
+//     .setLngLat(feature.geometry.coordinates)
+
 
 // /*--------------------------------------------------------------------
 // Filtering Service Type
