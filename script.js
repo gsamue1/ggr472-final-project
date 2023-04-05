@@ -59,7 +59,7 @@ map.addLayer({
                 '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                '#E75151',
+                '#e44040',
                 'gray'
         ],    
         'circle-stroke-color': 'black'
@@ -92,7 +92,7 @@ map.addLayer({
                 '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                '#E75151',
+                '#e44040',
                 'gray'
         ],   
         'circle-stroke-color': 'black'
@@ -125,7 +125,7 @@ map.addLayer({
                 '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                '#E75151',
+                '#e44040',
                 'gray'
         ],   
         'circle-stroke-color': 'black'
@@ -159,7 +159,7 @@ map.addLayer({
                 '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                '#E75151',
+                '#e44040',
                 'gray'
         ],  
         'circle-stroke-color': 'black'
@@ -192,7 +192,7 @@ map.addLayer({
                 '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                '#E75151',
+                '#e44040',
                 'gray'
         ],    
         'circle-stroke-color': 'black'
@@ -225,7 +225,7 @@ map.addLayer({
                 '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                '#E75151',
+                '#e44040',
                 'gray'
             ],
         'circle-stroke-color': 'black'
@@ -258,7 +258,7 @@ map.addLayer({
                     '#E76F51', // if yes in col4 and no in the rest
                 // Category six: yes in 1 column and no in the other four
                     ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                    '#E75151',
+                    '#e44040',
                     'gray'
             ],
         'circle-stroke-color': 'black'
@@ -383,7 +383,7 @@ document.getElementById('returnbutton').addEventListener('click', () => {
             let appt = e.features[0].properties.USER_appoi;
             let res_req = e.features[0].properties.USER_resid;
             let res_req_details = e.features[0].properties.USER_res_1;
-            let website = e.features[0].properties.USER_servi;
+            let website = e.features[0].properties.USER_websi;
             let contact = e.features[0].properties.USER_conta;
             let access = e.features[0].properties.USER_acces;
             let target = e.features[0].properties.USER_targe;
@@ -401,7 +401,8 @@ document.getElementById('returnbutton').addEventListener('click', () => {
                     + '<br>' + "<b>" + 'Appointment Required: ' + "</b>" + appt
                     + '<br>' + "<b>" + 'Residency Requirements: ' + "</b>" + res_req + " (" + res_req_details + ")"
                     + '<br>' + "<b>" + 'Target Group: ' + "</b>" + target
-                    + '<br>' + "<b>" + 'Website: ' + "</b>" + '<a href="' + website + '">' + '</a>'
+                    + '<br>' + "<b>" + 'Website: ' + "</b>" +  website 
+                    //'<a href="' + + '">' + '</a>'
                     + '<br>' + "<b>" + 'Contact: ' + "</b>" + contact
                     + '<br>' + "<b>" + 'Wheelchair Accessible: ' + "</b>" + access)
                 .addTo(map);
