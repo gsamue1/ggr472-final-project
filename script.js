@@ -410,7 +410,7 @@ document.getElementById('returnbutton').addEventListener('click', () => {
                 .setLngLat(e.lngLat)
                 .setHTML("<b>" + name + "</b>" 
                     + '<br>' + ' ' 
-                    + '<br>' + "<b>" + 'Address: ' + "</b>" + address_name + ' ' + address_details + ", " + postal_code
+                    + '<br>' + "<b>" + 'Address: ' + "</b>" + address_name + ", " + postal_code
                     + '<br>' + "<b>" + 'Services: ' + "</b>" + services
                     + '<br>' + "<b>" + 'Operating Hours: ' + "</b>" + hours
                     + '<br>' + "<b>" + 'Appointment Required: ' + "</b>" + appt
