@@ -44,22 +44,22 @@ map.addLayer({
             'case',
             //Multi service location -- true in 2 or more of the boolean columns for service type
                 ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-                'blue', // if true in 2 or more columns
+                '#264653', // if true in 2 or more columns
             // Only Food Bank -- yes in USER_food_ and no in the other four
                 ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'green', // if true in col1 and no in the rest
+                '#2A9D8F', // if true in col1 and no in the rest
             // Category three: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'pink', // if yes in col2 and no in the rest
+                '#E9C46A', // if yes in col2 and no in the rest
             // Category four: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'orange', // if yes in col3 and no in the rest
+                '#F4A261', // if yes in col3 and no in the rest
             // Category five: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-                'red', // if yes in col4 and no in the rest
+                '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                'yellow',
+                '#E75151',
                 'gray'
         ],    
         'circle-stroke-color': 'black'
@@ -77,22 +77,22 @@ map.addLayer({
             'case',
             //Multi service location -- true in 2 or more of the boolean columns for service type
                 ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-                'blue', // if true in 2 or more columns
+                '#264653', // if true in 2 or more columns
             // Only Food Bank -- yes in USER_food_ and no in the other four
                 ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'green', // if true in col1 and no in the rest
+                '#2A9D8F', // if true in col1 and no in the rest
             // Category three: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'pink', // if yes in col2 and no in the rest
+                '#E9C46A', // if yes in col2 and no in the rest
             // Category four: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'orange', // if yes in col3 and no in the rest
+                '#F4A261', // if yes in col3 and no in the rest
             // Category five: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-                'red', // if yes in col4 and no in the rest
+                '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                'yellow',
+                '#E75151',
                 'gray'
         ],   
         'circle-stroke-color': 'black'
@@ -110,22 +110,22 @@ map.addLayer({
             'case',
             //Multi service location -- true in 2 or more of the boolean columns for service type
                 ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-                'blue', // if true in 2 or more columns
+                '#264653', // if true in 2 or more columns
             // Only Food Bank -- yes in USER_food_ and no in the other four
                 ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'green', // if true in col1 and no in the rest
+                '#2A9D8F', // if true in col1 and no in the rest
             // Category three: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'pink', // if yes in col2 and no in the rest
+                '#E9C46A', // if yes in col2 and no in the rest
             // Category four: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'orange', // if yes in col3 and no in the rest
+                '#F4A261', // if yes in col3 and no in the rest
             // Category five: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-                'red', // if yes in col4 and no in the rest
+                '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                'yellow',
+                '#E75151',
                 'gray'
         ],   
         'circle-stroke-color': 'black'
@@ -144,22 +144,22 @@ map.addLayer({
             'case',
             //Multi service location -- true in 2 or more of the boolean columns for service type
                 ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-                'blue', // if true in 2 or more columns
+                '#264653', // if true in 2 or more columns
             // Only Food Bank -- yes in USER_food_ and no in the other four
                 ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'green', // if true in col1 and no in the rest
+                '#2A9D8F', // if true in col1 and no in the rest
             // Category three: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'pink', // if yes in col2 and no in the rest
+                '#E9C46A', // if yes in col2 and no in the rest
             // Category four: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'orange', // if yes in col3 and no in the rest
+                '#F4A261', // if yes in col3 and no in the rest
             // Category five: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-                'red', // if yes in col4 and no in the rest
+                '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                'yellow',
+                '#E75151',
                 'gray'
         ],  
         'circle-stroke-color': 'black'
@@ -177,22 +177,22 @@ map.addLayer({
             'case',
             //Multi service location -- true in 2 or more of the boolean columns for service type
                 ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-                'blue', // if true in 2 or more columns
+                '#264653', // if true in 2 or more columns
             // Only Food Bank -- yes in USER_food_ and no in the other four
                 ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'green', // if true in col1 and no in the rest
+                '#2A9D8F', // if true in col1 and no in the rest
             // Category three: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'pink', // if yes in col2 and no in the rest
+                '#E9C46A', // if yes in col2 and no in the rest
             // Category four: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                'orange', // if yes in col3 and no in the rest
+                '#F4A261', // if yes in col3 and no in the rest
             // Category five: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-                'red', // if yes in col4 and no in the rest
+                '#E76F51', // if yes in col4 and no in the rest
             // Category six: yes in 1 column and no in the other four
                 ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                'yellow',
+                '#E75151',
                 'gray'
         ],    
         'circle-stroke-color': 'black'
@@ -207,26 +207,26 @@ map.addLayer({
     'paint': {
         'circle-radius': 6,
         'circle-color': [
-                'case',
-                //Multi service location -- true in 2 or more of the boolean columns for service type
-                    ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-                    'blue', // if true in 2 or more columns
-                // Only Food Bank -- yes in USER_food_ and no in the other four
-                    ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                    'green', // if true in col1 and no in the rest
-                // Category three: yes in 1 column and no in the other four
-                    ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                    'pink', // if yes in col2 and no in the rest
-                // Category four: yes in 1 column and no in the other four
-                    ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                    'orange', // if yes in col3 and no in the rest
-                // Category five: yes in 1 column and no in the other four
-                    ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-                    'red', // if yes in col4 and no in the rest
-                // Category six: yes in 1 column and no in the other four
-                    ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                    'yellow',
-                    'gray'
+            'case',
+            //Multi service location -- true in 2 or more of the boolean columns for service type
+                ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
+                '#264653', // if true in 2 or more columns
+            // Only Food Bank -- yes in USER_food_ and no in the other four
+                ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+                '#2A9D8F', // if true in col1 and no in the rest
+            // Category three: yes in 1 column and no in the other four
+                ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+                '#E9C46A', // if yes in col2 and no in the rest
+            // Category four: yes in 1 column and no in the other four
+                ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+                '#F4A261', // if yes in col3 and no in the rest
+            // Category five: yes in 1 column and no in the other four
+                ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
+                '#E76F51', // if yes in col4 and no in the rest
+            // Category six: yes in 1 column and no in the other four
+                ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
+                '#E75151',
+                'gray'
             ],
         'circle-stroke-color': 'black'
     },
@@ -243,44 +243,29 @@ map.addLayer({
                 'case',
                 //Multi service location -- true in 2 or more of the boolean columns for service type
                     ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-                    'blue', // if true in 2 or more columns
+                    '#264653', // if true in 2 or more columns
                 // Only Food Bank -- yes in USER_food_ and no in the other four
                     ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                    'green', // if true in col1 and no in the rest
+                    '#2A9D8F', // if true in col1 and no in the rest
                 // Category three: yes in 1 column and no in the other four
                     ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                    'pink', // if yes in col2 and no in the rest
+                    '#E9C46A', // if yes in col2 and no in the rest
                 // Category four: yes in 1 column and no in the other four
                     ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-                    'orange', // if yes in col3 and no in the rest
+                    '#F4A261', // if yes in col3 and no in the rest
                 // Category five: yes in 1 column and no in the other four
                     ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-                    'red', // if yes in col4 and no in the rest
+                    '#E76F51', // if yes in col4 and no in the rest
                 // Category six: yes in 1 column and no in the other four
                     ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-                    'yellow',
+                    '#E75151',
                     'gray'
             ],
         'circle-stroke-color': 'black'
     },
     'filter': ['==', ['get', 'USER_sunda'], true]
 });
-
-// 'match', // Match expression 
-// ['get', 'Ice Pad Size Category'], // GET expression retrieves property value from 'capacity' data field
-// 'NHL(200X85)', '#f35c4b', // 
-// 'Regular(185X85)', '#eded4f', //
-// 'Undersized(less than 185X85)', '#e0890f',
-// '#918e8d'
 });
-
-
-// <li><span style='background:#4696eb;'></span>Multiple Services</li>  
-//               <li><span style='background:#83cd6c;'></span>Food Banks</li>
-//               <li><span style='background:#d03db0;'></span> Take Away Meal Programs</li>
-//               <li><span style='background:#fbb430;'></span>Sit Down Meal Programs</li>
-//               <li><span style='background:#da2424;'></span>Community Fridges and Gardens</li>
-//               <li><span style='background:#a116c7;'></span>Education and Community Programming</li>
 
 // /*--------------------------------------------------------------------
 // FILTERING FOR SERVICE TYPE
