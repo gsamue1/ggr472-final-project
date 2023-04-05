@@ -33,14 +33,14 @@ map.addSource('food', {
     data: foodresources_geojson,
 });
 
-//MAPPING FOOD BANKS - Set style for when new points are added to the data source
 
+//MAPPING FOOD BANKS - Set style for when new points are added to the data source
 map.addLayer({
     'id': 'food_banks',
     'type': 'circle',
     'source': 'food',
     'paint': {
-        'circle-radius': 6,
+        'circle-radius': 7,
         'circle-color': 'blue',    
         'circle-stroke-color': 'black'
     },
@@ -53,7 +53,7 @@ map.addLayer({
     'type': 'circle',
     'source': 'food',
     'paint': {
-        'circle-radius': 5,
+        'circle-radius': 6,
         'circle-color': 'red',
         'circle-stroke-color': 'black'
     },
@@ -66,7 +66,7 @@ map.addLayer({
     'type': 'circle',
     'source': 'food',
     'paint': {
-        'circle-radius': 4,
+        'circle-radius': 5,
         'circle-color': 'yellow',
         'circle-stroke-color': 'black'
     },
@@ -79,7 +79,7 @@ map.addLayer({
     'type': 'circle',
     'source': 'food',
     'paint': {
-        'circle-radius': 3,
+        'circle-radius': 4,
         'circle-color': 'purple',
         'circle-stroke-color': 'black'
     },
@@ -92,111 +92,138 @@ map.addLayer({
     'type': 'circle',
     'source': 'food',
     'paint': {
-        'circle-radius': 2,
+        'circle-radius': 3,
         'circle-color': 'green',
         'circle-stroke-color': 'black'
     },
     'filter': ['==', ['get', 'USER_com_1'], 'Yes']
 });
+
+
+// map.addLayer({
+//     'id': 'monday',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 6,
+//         'circle-color': 'blue',    
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_monda'], 'Yes']
+// });
+
+// map.addLayer({
+//     'id': 'tuesday',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 6,
+//         'circle-color': 'yellow',    
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_tuesd'], 'Yes']
+// });
+
+// map.addLayer({
+//     'id': 'wednesday',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 6,
+//         'circle-color': 'red',    
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_wedne'], 'Yes']
+// });
+
+
+// map.addLayer({
+//     'id': 'thursday',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 6,
+//         'circle-color': 'green',    
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_thurs'], 'Yes']
+// });
+
+// map.addLayer({
+//     'id': 'friday',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 6,
+//         'circle-color': 'purple',    
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_frida'], 'Yes']
+// });
+
+// map.addLayer({
+//     'id': 'saturday',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 6,
+//         'circle-color': 'pink',    
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_satur'], 'Yes']
+// });
+
+// map.addLayer({
+//     'id': 'sunday',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 6,
+//         'circle-color':
+//             'orange',
+//             // 'match',
+//             // ['get', 'USER_servi'],
+//             // //Multi Service Location
+//             //     ';', 'blue',
+//             // //Only Food Bank
+//             //     'Food Banks ', 'green',
+//             // //Only Takeout Meal
+//             //     'Take-Out Meals ', 'pink',
+//             //     'Meals on Wheels ', 'pink',
+//             // //Only Sit Down Meal Program 
+//             //     'Meal Program ', 'orange',
+//             // //Only Education/Community Programming
+//             //     'Nutrition Program ', 'yellow',
+//             //     'Community Program ', 'yellow',
+//             //     'Community Kitchen ', 'yellow',
+//             // //Only Community Fridge, Seed Centre or Garden
+//             //     'Community Fridge ', 'red',
+//             //     'Seed Centre ', 'red',
+//             //     'Community Garden ', 'red'
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_sunda'], 'Yes']
+// });
+
+// 'match', // Match expression 
+// ['get', 'Ice Pad Size Category'], // GET expression retrieves property value from 'capacity' data field
+// 'NHL(200X85)', '#f35c4b', // 
+// 'Regular(185X85)', '#eded4f', //
+// 'Undersized(less than 185X85)', '#e0890f',
+// '#918e8d'
 });
 
-// /*--------------------------------------------------------------------
-// ADDING MAP CONTROLS
-// --------------------------------------------------------------------*/
-
-//Adding Navigation Controls -- Zoom and Spin
-map.addControl(new mapboxgl.NavigationControl());
-
-//Adding Fullscreen Capacity 
-map.addControl(new mapboxgl.FullscreenControl());
-
-//Adding Geocoding Capacity -- People Can Search their Address
-const geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl,
-    countries: "ca" 
-});
-
-//Positioning Geocoder on Page
-document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-
-//Setting up Return Button -- Return Zoom to Original Extent
-document.getElementById('returnbutton').addEventListener('click', () => {
-    map.flyTo({
-        center: [-79.39, 43.70], //Coordinates Centering Page
-        zoom: 10.5,
-        essential: true
-    });
-});
+// <li><span style='background:#4696eb;'></span>Multiple Services</li>  
+//               <li><span style='background:#83cd6c;'></span>Food Banks</li>
+//               <li><span style='background:#d03db0;'></span> Take Away Meal Programs</li>
+//               <li><span style='background:#fbb430;'></span>Sit Down Meal Programs</li>
+//               <li><span style='background:#da2424;'></span>Community Fridges and Gardens</li>
+//               <li><span style='background:#a116c7;'></span>Education and Community Programming</li>
 
 // /*--------------------------------------------------------------------
-// CONFIGURING POP-UPS
+// FILTERING FOR SERVICE TYPE
 // --------------------------------------------------------------------*/
-// Code Sourced: Mapbox https://docs.mapbox.com/mapbox-gl-js/example/popup-on-hover/   
 
-//Creating Layer Array for Pop Up Functions -- Ensure Pop-Ups are enabled for all layers
-    let layers_pop = ['food_banks','takeout_meals','sit_meals','community_programs','fridge_gardens'];
-
-//Creating Pop-Up Variable for Food Bank Locations
-        map.on('click', layers_pop, (e) => {
-            console.log(e);   //e is the event info triggered and is passed to the function as a parameter (e)
-            //Explore console output using Google DevTools
-
-        // Defining Pop Up Variable
-            let name = e.features[0].properties.USER_name;
-            let address_name = e.features[0].properties.USER_addre;
-            let address_details = e.features[0].properties.USER_add_1;
-            let postal_code = e.features[0].properties.USER_posta;
-            let services = e.features[0].properties.USER_servi;
-            let hours = e.features[0].properties.USER_hours;
-            let appt = e.features[0].properties.USER_appoi;
-            let res_req = e.features[0].properties.USER_resid;
-            let res_req_details = e.features[0].properties.USER_res_1;
-            let website = e.features[0].properties.USER_servi;
-            let contact = e.features[0].properties.USER_conta;
-            let access = e.features[0].properties.USER_acces;
-            let target = e.features[0].properties.USER_targe;
-
-        //Variable testing 
-           console.log(name);
-
-            var pop_up = new mapboxgl.Popup()
-                .setLngLat(e.lngLat)
-                .setHTML("<b>" + name + "</b>" 
-                    + '<br>' + "<b>" + 'Address: ' + "</b>" + address_name + address_details + ", " + postal_code
-                    + '<br>' + "<b>" + 'Services: ' + "</b>" + services
-                    + '<br>' + "<b>" + 'Operating Hours: ' + "</b>" + hours
-                    + '<br>' + "<b>" + 'Appointment Required: ' + "</b>" + appt
-                    + '<br>' + "<b>" + 'Residency Requirements: ' + "</b>" + res_req + " (" + res_req_details + ")"
-                    + '<br>' + "<b>" + 'Target Group: ' + "</b>" + target
-                    + '<br>' + "<b>" + 'Website: ' + "</b>" + '<a href="' + website + '">' + '</a>'
-                    + '<br>' + "<b>" + 'Contact: ' + "</b>" + contact
-                    + '<br>' + "<b>" + 'Wheelchair Accessible: ' + "</b>" + access)
-                .addTo(map);
-            });
-        
-            // Change the cursor to a pointer when the mouse is over the layer
-            map.on('mouseenter', layers_pop, () => {
-            map.getCanvas().style.cursor = 'pointer';
-            });
-             
-            // Change the cursor back to a pointer
-            map.on('mouseleave', layers_pop, () => {
-            map.getCanvas().style.cursor = '';
-            });
-
-
-//     var feature = features[0];
-
-//   var popup = new mapboxgl.Popup({ offset: [0, -15] })
-//         .setLngLat(feature.geometry.coordinates)
-//         .setHTML('<h3>' + feature.properties.Company + '</h3><p>' + feature.properties.City + '</p>' + feature.properties.URL + '</p>')
-//     .setLngLat(feature.geometry.coordinates)
-
-
-// /*--------------------------------------------------------------------
-// Filtering Service Type
-// --------------------------------------------------------------------*/
 let foodbank = true;
 let takeout = true;
 let sitdown = true;
@@ -254,59 +281,232 @@ document.getElementById('resourcecheck').addEventListener('change', (e) => {
 });
 
 // /*--------------------------------------------------------------------
+// ADDING MAP CONTROLS
+// --------------------------------------------------------------------*/
+
+//Adding Navigation Controls -- Zoom and Spin
+map.addControl(new mapboxgl.NavigationControl());
+
+//Adding Fullscreen Capacity 
+map.addControl(new mapboxgl.FullscreenControl());
+
+//Adding Geocoding Capacity -- People Can Search their Address
+const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    countries: "ca" 
+});
+
+//Positioning Geocoder on Page
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+//Setting up Return Button -- Return Zoom to Original Extent
+document.getElementById('returnbutton').addEventListener('click', () => {
+    map.flyTo({
+        center: [-79.39, 43.70], //Coordinates Centering Page
+        zoom: 10.5,
+        essential: true
+    });
+});
+
+// /*--------------------------------------------------------------------
+// CONFIGURING POP-UPS
+// --------------------------------------------------------------------*/
+// Code Sourced: Mapbox https://docs.mapbox.com/mapbox-gl-js/example/popup-on-hover/   
+
+//Creating Layer Array for Pop Up Functions -- Ensure Pop-Ups are enabled for all layers
+    let layers_pop = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+//'food_banks','takeout_meals','sit_meals','community_programs','fridge_gardens'
+
+
+
+//Creating Pop-Up Variable for Food Bank Locations
+        map.on('click', layers_pop, (e) => {
+            console.log(e);   //e is the event info triggered and is passed to the function as a parameter (e)
+            //Explore console output using Google DevTools
+
+        // Defining Pop Up Variable
+            let name = e.features[0].properties.USER_name;
+            let address_name = e.features[0].properties.USER_addre;
+            let address_details = e.features[0].properties.USER_add_1;
+            let postal_code = e.features[0].properties.USER_posta;
+            let services = e.features[0].properties.USER_servi;
+            let hours = e.features[0].properties.USER_hours;
+            let appt = e.features[0].properties.USER_appoi;
+            let res_req = e.features[0].properties.USER_resid;
+            let res_req_details = e.features[0].properties.USER_res_1;
+            let website = e.features[0].properties.USER_servi;
+            let contact = e.features[0].properties.USER_conta;
+            let access = e.features[0].properties.USER_acces;
+            let target = e.features[0].properties.USER_targe;
+
+        //Variable testing 
+           console.log(name);
+
+            var pop_up = new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML("<b>" + name + "</b>" 
+                    + '<br>' + ' ' 
+                    + '<br>' + "<b>" + 'Address: ' + "</b>" + address_name + address_details + ", " + postal_code
+                    + '<br>' + "<b>" + 'Services: ' + "</b>" + services
+                    + '<br>' + "<b>" + 'Operating Hours: ' + "</b>" + hours
+                    + '<br>' + "<b>" + 'Appointment Required: ' + "</b>" + appt
+                    + '<br>' + "<b>" + 'Residency Requirements: ' + "</b>" + res_req + " (" + res_req_details + ")"
+                    + '<br>' + "<b>" + 'Target Group: ' + "</b>" + target
+                    + '<br>' + "<b>" + 'Website: ' + "</b>" + '<a href="' + website + '">' + '</a>'
+                    + '<br>' + "<b>" + 'Contact: ' + "</b>" + contact
+                    + '<br>' + "<b>" + 'Wheelchair Accessible: ' + "</b>" + access)
+                .addTo(map);
+            });
+        
+            // Change the cursor to a pointer when the mouse is over the layer
+            map.on('mouseenter', layers_pop, () => {
+            map.getCanvas().style.cursor = 'pointer';
+            });
+             
+            // Change the cursor back to a pointer
+            map.on('mouseleave', layers_pop, () => {
+            map.getCanvas().style.cursor = '';
+            });
+
+
+// /*--------------------------------------------------------------------
+// Filtering Open Times
+// --------------------------------------------------------------------*/
+let mon = true;
+let tues = true;
+let wed = true;
+let thurs = true;
+let fri = true;
+let sat = true;
+let sun = true;
+
+// Filter for Monday Operating Hours
+document.getElementById('moncheck').addEventListener('change', (e) => {
+   mon = !mon;
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'monday',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
+
+// Filter for Tuesday
+document.getElementById('tuescheck').addEventListener('change', (e) => {
+    tues = !tues;
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'tuesday',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
+
+// Filter for Wednesday
+document.getElementById('wedcheck').addEventListener('change', (e) => {
+    wed = !wed;
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'wednesday',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
+
+// Filter for Thursday
+document.getElementById('thurscheck').addEventListener('change', (e) => {
+    thurs = !thurs;
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'thursday',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
+
+// Filter for Friday
+document.getElementById('fricheck').addEventListener('change', (e) => {
+    fri = !fri;
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'friday',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
+
+// Filter for Saturday
+document.getElementById('satcheck').addEventListener('change', (e) => {
+    sat = !sat;
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'saturday',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
+
+// Filter for Sunday
+document.getElementById('suncheck').addEventListener('change', (e) => {
+    sun = !sun;
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'sunday',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
+});
+
+
+// /*--------------------------------------------------------------------
 // Filtering Open Time 
 // --------------------------------------------------------------------*/
 
 
-// Filter for Monday
-document.getElementById('moncheck').addEventListener('change', (e) => {
+// // Filter for Monday
+// document.getElementById('moncheck').addEventListener('change', (e) => {
 
-    let layers = [];
-    let fields = [];
+//     let layers = [];
+//     let fields = [];
 
-    let checked = 'No';
-    if(e.target.checked) {
-        checked = 'Yes'
-    }
+//     let checked = 'No';
+//     if(e.target.checked) {
+//         checked = 'Yes'
+//     }
 
-    if (foodbank) {
-        layers.push ('food_banks');
-        fields.push('USER_food_')
-    }
+//     if (foodbank) {
+//         layers.push ('food_banks');
+//         fields.push('USER_food_')
+//     }
 
-    if (takeout) {
-        layers.push('takeout_meals');
-        fields.push('USER_takeo');
-    }
+//     if (takeout) {
+//         layers.push('takeout_meals');
+//         fields.push('USER_takeo');
+//     }
 
-    if (sitdown) {
-        layers.push('sit_meals');
-        fields.push('USER_meal_');
-    }
+//     if (sitdown) {
+//         layers.push('sit_meals');
+//         fields.push('USER_meal_');
+//     }
 
-    if (commprog) {
-        layers.push('community_programs');
-        fields.push('USER_commu');
-    }
+//     if (commprog) {
+//         layers.push('community_programs');
+//         fields.push('USER_commu');
+//     }
 
-    if (commgardfrid) {
-        layers.push('fridge_gardens');
-        fields.push('USER_com_1');
-    }
+//     if (commgardfrid) {
+//         layers.push('fridge_gardens');
+//         fields.push('USER_com_1');
+//     }
 
-    layers.forEach((layer, i) => {
-        console.log(layer)
-        let field = fields[i]
+//     layers.forEach((layer, i) => {
+//         console.log(layer)
+//         let field = fields[i]
 
-        map.setFilter(layer, 
-            ['all',
-            ['==', ['get', 'USER_monda'], checked],
-            ['==', ['get', field], 'Yes']])
+//         map.setFilter(layer, 
+//             ['all',
+//             ['==', ['get', 'USER_monda'], checked],
+//             ['==', ['get', field], 'Yes']])
         
-    });
+//     });
 
     
-});
+// });
 
 // ('fridge_gardens', b, c, d, e)
 
@@ -322,14 +522,138 @@ document.getElementById('moncheck').addEventListener('change', (e) => {
 // });
 
 
-// Filter for Tuesday
 
-// Filter for Wednesday
+// UNUSED CODE 
+///// Adding Layers by Service Type
+///// Filtering by Service Type
 
-// Filter for Thursday 
 
-// Filter for Friday
+// //MAPPING FOOD BANKS - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'food_banks',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 6,
+//         'circle-color': 'blue',    
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_food_'], 'Yes']
+// });
 
-// Filter for Saturday
+// //MAPPING TAKEOUT LOCATIONS - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'takeout_meals',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 5,
+//         'circle-color': 'red',
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_takeo'], 'Yes']
+// });
 
-// Filter for Sunday
+// //MAPPING SIT-DOWN MEALS - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'sit_meals',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 4,
+//         'circle-color': 'yellow',
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_meal_'], 'Yes']
+// });
+
+// //MAPPING COMMUNITY PROGRAMS - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'community_programs',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 3,
+//         'circle-color': 'purple',
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_commu'], 'Yes']
+// });
+
+// //MAPPING COMMUNITY GARDENS AND FRIDGES - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'fridge_gardens',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 2,
+//         'circle-color': 'green',
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_com_1'], 'Yes']
+// });
+
+/////////// FILTERING 
+
+// let foodbank = true;
+// let takeout = true;
+// let sitdown = true;
+// let commprog = true;
+// let commgardfrid = true;
+
+// // Filter for Food Banks
+// document.getElementById('foodbankcheck').addEventListener('change', (e) => {
+//    foodbank = !foodbank;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'food_banks',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
+// // Filter for Takeout Meals
+// document.getElementById('takeoutcheck').addEventListener('change', (e) => {
+//     takeout = !takeout;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'takeout_meals',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
+// // Filter for Sit Down Meal Programmes
+// document.getElementById('mealprogcheck').addEventListener('change', (e) => {
+//     sitdown = !sitdown;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'sit_meals',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
+// // Filter for Education and Community Programming
+// document.getElementById('educheck').addEventListener('change', (e) => {
+//     commprog = !commprog;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'community_programs',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
+// // Filter for Community Gardens or Kitchens 
+// document.getElementById('resourcecheck').addEventListener('change', (e) => {
+//     commgardfrid = !commgardfrid;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'fridge_gardens',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
+// const foodbank = map.getLayoutProperty('monday', 'USER_food') === "Yes" 
+// if (foodbank) {
+//     map.setLayoutProperty('monday', 'visibility', 'visible')
+// } else {
+//     map.setLayoutProperty('monday', 'visibility', 'visible')
+// }
