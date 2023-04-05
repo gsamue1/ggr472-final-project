@@ -34,71 +34,70 @@ map.addSource('food', {
 });
 
 
-//MAPPING FOOD BANKS - Set style for when new points are added to the data source
-map.addLayer({
-    'id': 'food_banks',
-    'type': 'circle',
-    'source': 'food',
-    'paint': {
-        'circle-radius': 7,
-        'circle-color': 'blue',    
-        'circle-stroke-color': 'black'
-    },
-    'filter': ['==', ['get', 'USER_food_'], 'Yes']
-});
+// //MAPPING FOOD BANKS - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'food_banks',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 7,
+//         'circle-color': 'blue',    
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_food_'], 'Yes']
+// });
 
-//MAPPING TAKEOUT LOCATIONS - Set style for when new points are added to the data source
-map.addLayer({
-    'id': 'takeout_meals',
-    'type': 'circle',
-    'source': 'food',
-    'paint': {
-        'circle-radius': 6,
-        'circle-color': 'red',
-        'circle-stroke-color': 'black'
-    },
-    'filter': ['==', ['get', 'USER_takeo'], 'Yes']
-});
+// //MAPPING TAKEOUT LOCATIONS - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'takeout_meals',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 6,
+//         'circle-color': 'red',
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_takeo'], 'Yes']
+// });
 
-//MAPPING SIT-DOWN MEALS - Set style for when new points are added to the data source
-map.addLayer({
-    'id': 'sit_meals',
-    'type': 'circle',
-    'source': 'food',
-    'paint': {
-        'circle-radius': 5,
-        'circle-color': 'yellow',
-        'circle-stroke-color': 'black'
-    },
-    'filter': ['==', ['get', 'USER_meal_'], 'Yes']
-});
+// //MAPPING SIT-DOWN MEALS - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'sit_meals',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 5,
+//         'circle-color': 'yellow',
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_meal_'], 'Yes']
+// });
 
-//MAPPING COMMUNITY PROGRAMS - Set style for when new points are added to the data source
-map.addLayer({
-    'id': 'community_programs',
-    'type': 'circle',
-    'source': 'food',
-    'paint': {
-        'circle-radius': 4,
-        'circle-color': 'purple',
-        'circle-stroke-color': 'black'
-    },
-    'filter': ['==', ['get', 'USER_commu'], 'Yes']
-});
+// //MAPPING COMMUNITY PROGRAMS - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'community_programs',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 4,
+//         'circle-color': 'purple',
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_commu'], 'Yes']
+// });
 
-//MAPPING COMMUNITY GARDENS AND FRIDGES - Set style for when new points are added to the data source
-map.addLayer({
-    'id': 'fridge_gardens',
-    'type': 'circle',
-    'source': 'food',
-    'paint': {
-        'circle-radius': 3,
-        'circle-color': 'green',
-        'circle-stroke-color': 'black'
-    },
-    'filter': ['==', ['get', 'USER_com_1'], 'Yes']
-});
-
+// //MAPPING COMMUNITY GARDENS AND FRIDGES - Set style for when new points are added to the data source
+// map.addLayer({
+//     'id': 'fridge_gardens',
+//     'type': 'circle',
+//     'source': 'food',
+//     'paint': {
+//         'circle-radius': 3,
+//         'circle-color': 'green',
+//         'circle-stroke-color': 'black'
+//     },
+//     'filter': ['==', ['get', 'USER_com_1'], 'Yes']
+// });
 
 // map.addLayer({
 //     'id': 'monday',
@@ -173,37 +172,38 @@ map.addLayer({
 //     'filter': ['==', ['get', 'USER_satur'], 'Yes']
 // });
 
-// map.addLayer({
-//     'id': 'sunday',
-//     'type': 'circle',
-//     'source': 'food',
-//     'paint': {
-//         'circle-radius': 6,
-//         'circle-color':
-//             'orange',
-//             // 'match',
-//             // ['get', 'USER_servi'],
-//             // //Multi Service Location
-//             //     ';', 'blue',
-//             // //Only Food Bank
-//             //     'Food Banks ', 'green',
-//             // //Only Takeout Meal
-//             //     'Take-Out Meals ', 'pink',
-//             //     'Meals on Wheels ', 'pink',
-//             // //Only Sit Down Meal Program 
-//             //     'Meal Program ', 'orange',
-//             // //Only Education/Community Programming
-//             //     'Nutrition Program ', 'yellow',
-//             //     'Community Program ', 'yellow',
-//             //     'Community Kitchen ', 'yellow',
-//             // //Only Community Fridge, Seed Centre or Garden
-//             //     'Community Fridge ', 'red',
-//             //     'Seed Centre ', 'red',
-//             //     'Community Garden ', 'red'
-//         'circle-stroke-color': 'black'
-//     },
-//     'filter': ['==', ['get', 'USER_sunda'], 'Yes']
-// });
+map.addLayer({
+    'id': 'sunday',
+    'type': 'circle',
+    'source': 'food',
+    'paint': {
+        'circle-radius': 6,
+            'circle-color': [
+                'case',
+                //Multi service location -- true in 2 or more of the boolean columns for service type
+                    ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
+                    'blue', // if true in 2 or more columns
+                // Only Food Bank -- yes in USER_food_ and no in the other four
+                    ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+                    'green', // if true in col1 and no in the rest
+                // Category three: yes in 1 column and no in the other four
+                    ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+                    'pink', // if yes in col2 and no in the rest
+                // Category four: yes in 1 column and no in the other four
+                    ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+                    'orange', // if yes in col3 and no in the rest
+                // Category five: yes in 1 column and no in the other four
+                    ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
+                    'red', // if yes in col4 and no in the rest
+                // Category six: yes in 1 column and no in the other four
+                    ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
+                    'yellow',
+                    'gray'
+            ],
+        'circle-stroke-color': 'black'
+    },
+    'filter': ['==', ['get', 'USER_sunda'], 'Yes']
+});
 
 // 'match', // Match expression 
 // ['get', 'Ice Pad Size Category'], // GET expression retrieves property value from 'capacity' data field
