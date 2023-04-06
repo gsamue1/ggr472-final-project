@@ -1,3 +1,11 @@
+///// TO DO LIST
+// Configure Pop Ups to be Top Layer 
+// Configure geocoder to be upper layer 
+// add transportation layer
+// add walking buffer 
+// filtering for service type 
+//COmment out Code to Explain Functionality
+
 /*--------------------------------------------------------------------
 Step 1: INITIALIZE MAP
 --------------------------------------------------------------------*/
@@ -362,14 +370,14 @@ document.getElementById('returnbutton').addEventListener('click', () => {
 // Code Sourced: Mapbox https://docs.mapbox.com/mapbox-gl-js/example/popup-on-hover/   
 
 //Creating Layer Array for Pop Up Functions -- Ensure Pop-Ups are enabled for all layers
-    let layers_pop = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    const layerIds = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
 //'food_banks','takeout_meals','sit_meals','community_programs','fridge_gardens'
 
 
 
 //Creating Pop-Up Variable for Food Bank Locations
-        map.on('click', layers_pop, (e) => {
+        map.on('click', layerIds, (e) => {
             console.log(e);   //e is the event info triggered and is passed to the function as a parameter (e)
             //Explore console output using Google DevTools
 
@@ -408,12 +416,12 @@ document.getElementById('returnbutton').addEventListener('click', () => {
             });
         
             // Change the cursor to a pointer when the mouse is over the layer
-            map.on('mouseenter', layers_pop, () => {
+            map.on('mouseenter', layerIds, () => {
             map.getCanvas().style.cursor = 'pointer';
             });
              
             // Change the cursor back to a pointer
-            map.on('mouseleave', layers_pop, () => {
+            map.on('mouseleave', layerIds, () => {
             map.getCanvas().style.cursor = '';
             });
 
@@ -501,8 +509,47 @@ document.getElementById('suncheck').addEventListener('change', (e) => {
 
 
 // /*--------------------------------------------------------------------
-// Filtering Open Time 
+// Filtering Service Type
 // --------------------------------------------------------------------*/
+//Filter for Food Banks
+
+// Defining Service Type Boolean Properties 
+const serviceProperties = ['USER_food', 'USER_takeo', 'USER_meal_', 'USER_commu', 'USER_com_1'];
+
+// Array of layer IDs defined above -- see line 373
+
+// Add a change event listener to each checkbox
+serviceProperties.forEach((serviceProperty) => {
+  const checkbox = document.getElementById(boolProperty);
+  checkbox.addEventListener('change', (e) => {
+    const filterValue = e.target.checked ? true : false;
+    const filter = ['==', serviceProperty, filterValue];
+    layerIds.forEach((layerId) => {
+      map.setFilter(layerId, filter);
+    });
+  });
+});
+
+
+// Define Food Bank Filter Column
+// const food_property = 'USER_food_';
+
+// 'case',
+//     ['all', ['==', ['get', 'USER_food_'], true]],
+//     ['all', ['==', ['get', 'USER_takeo'], true]],
+//     ['all', ['==', ['get', 'USER_meal_'], true]],
+//     ['all', ['==', ['get', 'USER_commu'], true]],
+//     ['all', ['==', ['get', 'USER_com_1'], true]],
+// Array of layer IDs defined above -- see line 373
+
+// Add a change event listener to the checkbox
+// document.getElementById('foodbankcheck').addEventListener('change', (e) => {
+//   const filterValue = e.target.checked ? true : false;
+//   const filter = ['==', food_property, true];
+//   layerIds.forEach((layerId) => {
+//     map.setFilter(layerId, filter);
+//   });
+// });
 
 
 // // Filter for Monday
