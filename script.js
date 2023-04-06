@@ -110,22 +110,20 @@ map.addLayer({
             'case',
          // Category 1: Food Bank Only  -- yes in USER_food_ and no in the other four
              ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-             '#2A9D8F', // if true in col1 and no in the rest
+             '#2A9D8F',
          // Category 2: Takeout Meals Only 
              ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-             '#8bc049', // if yes in col2 and no in the rest
+             '#8bc049', 
          // Category 3: Sit Down Meal Program Only
              ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-             '#E9C46A', // if yes in col3 and no in the rest
+             '#E9C46A', 
          // Category 4: Community Program Only
              ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-             '#F4A261', // if yes in col4 and no in the rest
+             '#F4A261', 
           // Category 5: Community Fridges and Gardens Only
              ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
              '#e44040',
              '#264653'  //Multi service location -- true in 2 or more of the boolean columns for service type, if it is not only true for one it has to be true for more than one
-             // ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-             // '#264653', // if true in 2 or more columns
              ], 
         'circle-stroke-width': 1, //outline width
         'circle-stroke-color': 'black'
@@ -391,7 +389,7 @@ document.getElementById('returnbutton').addEventListener('click', () => {
             let target = e.features[0].properties.USER_targe;
 
         //Variable testing 
-           console.log(name);
+           console.log(website);
 
             var pop_up = new mapboxgl.Popup()
                 .setLngLat(e.lngLat)
@@ -403,8 +401,7 @@ document.getElementById('returnbutton').addEventListener('click', () => {
                     + '<br>' + "<b>" + 'Appointment Required: ' + "</b>" + appt
                     + '<br>' + "<b>" + 'Residency Requirements: ' + "</b>" + res_req + " (" + res_req_details + ")"
                     + '<br>' + "<b>" + 'Target Group: ' + "</b>" + target
-                    + '<br>' + "<b>" + 'Website: ' + "</b>" +  website 
-                    //'<a href="' + + '">' + '</a>'
+                    + '<br>' + "<b>" + 'Website: ' + "</b>" +  '<a href="' + website + '" target="_blank">' + website + '</a>'
                     + '<br>' + "<b>" + 'Contact: ' + "</b>" + contact
                     + '<br>' + "<b>" + 'Wheelchair Accessible: ' + "</b>" + access)
                 .addTo(map);
@@ -577,71 +574,6 @@ document.getElementById('suncheck').addEventListener('change', (e) => {
 ///// Adding Layers by Service Type
 ///// Filtering by Service Type
 
-
-// //MAPPING FOOD BANKS - Set style for when new points are added to the data source
-// map.addLayer({
-//     'id': 'food_banks',
-//     'type': 'circle',
-//     'source': 'food',
-//     'paint': {
-//         'circle-radius': 6,
-//         'circle-color': 'blue',    
-//         'circle-stroke-color': 'black'
-//     },
-//     'filter': ['==', ['get', 'USER_food_'], 'Yes']
-// });
-
-// //MAPPING TAKEOUT LOCATIONS - Set style for when new points are added to the data source
-// map.addLayer({
-//     'id': 'takeout_meals',
-//     'type': 'circle',
-//     'source': 'food',
-//     'paint': {
-//         'circle-radius': 5,
-//         'circle-color': 'red',
-//         'circle-stroke-color': 'black'
-//     },
-//     'filter': ['==', ['get', 'USER_takeo'], 'Yes']
-// });
-
-// //MAPPING SIT-DOWN MEALS - Set style for when new points are added to the data source
-// map.addLayer({
-//     'id': 'sit_meals',
-//     'type': 'circle',
-//     'source': 'food',
-//     'paint': {
-//         'circle-radius': 4,
-//         'circle-color': 'yellow',
-//         'circle-stroke-color': 'black'
-//     },
-//     'filter': ['==', ['get', 'USER_meal_'], 'Yes']
-// });
-
-// //MAPPING COMMUNITY PROGRAMS - Set style for when new points are added to the data source
-// map.addLayer({
-//     'id': 'community_programs',
-//     'type': 'circle',
-//     'source': 'food',
-//     'paint': {
-//         'circle-radius': 3,
-//         'circle-color': 'purple',
-//         'circle-stroke-color': 'black'
-//     },
-//     'filter': ['==', ['get', 'USER_commu'], 'Yes']
-// });
-
-// //MAPPING COMMUNITY GARDENS AND FRIDGES - Set style for when new points are added to the data source
-// map.addLayer({
-//     'id': 'fridge_gardens',
-//     'type': 'circle',
-//     'source': 'food',
-//     'paint': {
-//         'circle-radius': 2,
-//         'circle-color': 'green',
-//         'circle-stroke-color': 'black'
-//     },
-//     'filter': ['==', ['get', 'USER_com_1'], 'Yes']
-// });
 
 /////////// FILTERING 
 
