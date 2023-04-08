@@ -25,6 +25,7 @@
     padding: 10px; /*around elements inside of overlay*/
     max-width: fit-content;
     overflow: visible;
+    z-index: 2;
 }
 
 /* Geocoder Formatting */

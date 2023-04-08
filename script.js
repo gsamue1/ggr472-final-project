@@ -279,61 +279,61 @@ map.addLayer({
 // FILTERING FOR SERVICE TYPE
 // --------------------------------------------------------------------*/
 
-let foodbank = true;
-let takeout = true;
-let sitdown = true;
-let commprog = true;
-let commgardfrid = true;
+// let foodbank = true;
+// let takeout = true;
+// let sitdown = true;
+// let commprog = true;
+// let commgardfrid = true;
 
-// Filter for Food Banks
-document.getElementById('foodbankcheck').addEventListener('change', (e) => {
-   foodbank = !foodbank;
-    map.setLayoutProperty( // change the visiblity of the layer of data
-        'food_banks',
-        'visibility',
-        e.target.checked ? 'visible' : 'none'
-    )
-});
+// // Filter for Food Banks
+// document.getElementById('foodbankcheck').addEventListener('change', (e) => {
+//    foodbank = !foodbank;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'food_banks',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
 
-// Filter for Takeout Meals
-document.getElementById('takeoutcheck').addEventListener('change', (e) => {
-    takeout = !takeout;
-    map.setLayoutProperty( // change the visiblity of the layer of data
-        'takeout_meals',
-        'visibility',
-        e.target.checked ? 'visible' : 'none'
-    )
-});
+// // Filter for Takeout Meals
+// document.getElementById('takeoutcheck').addEventListener('change', (e) => {
+//     takeout = !takeout;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'takeout_meals',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
 
-// Filter for Sit Down Meal Programmes
-document.getElementById('mealprogcheck').addEventListener('change', (e) => {
-    sitdown = !sitdown;
-    map.setLayoutProperty( // change the visiblity of the layer of data
-        'sit_meals',
-        'visibility',
-        e.target.checked ? 'visible' : 'none'
-    )
-});
+// // Filter for Sit Down Meal Programmes
+// document.getElementById('mealprogcheck').addEventListener('change', (e) => {
+//     sitdown = !sitdown;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'sit_meals',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
 
-// Filter for Education and Community Programming
-document.getElementById('educheck').addEventListener('change', (e) => {
-    commprog = !commprog;
-    map.setLayoutProperty( // change the visiblity of the layer of data
-        'community_programs',
-        'visibility',
-        e.target.checked ? 'visible' : 'none'
-    )
-});
+// // Filter for Education and Community Programming
+// document.getElementById('educheck').addEventListener('change', (e) => {
+//     commprog = !commprog;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'community_programs',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
 
-// Filter for Community Gardens or Kitchens 
-document.getElementById('resourcecheck').addEventListener('change', (e) => {
-    commgardfrid = !commgardfrid;
-    map.setLayoutProperty( // change the visiblity of the layer of data
-        'fridge_gardens',
-        'visibility',
-        e.target.checked ? 'visible' : 'none'
-    )
-});
+// // Filter for Community Gardens or Kitchens 
+// document.getElementById('resourcecheck').addEventListener('change', (e) => {
+//     commgardfrid = !commgardfrid;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'fridge_gardens',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
 
 // /*--------------------------------------------------------------------
 // ADDING MAP CONTROLS
@@ -513,22 +513,22 @@ document.getElementById('suncheck').addEventListener('change', (e) => {
 // --------------------------------------------------------------------*/
 //Filter for Food Banks
 
-// Defining Service Type Boolean Properties 
-const serviceProperties = ['USER_food', 'USER_takeo', 'USER_meal_', 'USER_commu', 'USER_com_1'];
+// // Defining Service Type Boolean Properties 
+// const serviceProperties = ['USER_food_', 'USER_takeo', 'USER_meal_', 'USER_commu', 'USER_com_1'];
 
-// Array of layer IDs defined above -- see line 373
+// // Array of layer IDs defined above -- see line 373
 
-// Add a change event listener to each checkbox
-serviceProperties.forEach((serviceProperty) => {
-  const checkbox = document.getElementById(boolProperty);
-  checkbox.addEventListener('change', (e) => {
-    const filterValue = e.target.checked ? true : false;
-    const filter = ['==', serviceProperty, filterValue];
-    layerIds.forEach((layerId) => {
-      map.setFilter(layerId, filter);
-    });
-  });
-});
+// // Add a change event listener to each checkbox
+// serviceProperties.forEach((serviceProperty) => {
+//   const checkbox = document.getElementById(boolProperty);
+//   checkbox.addEventListener('change', (e) => {
+//     const filterValue = e.target.checked ? true : false;
+//     const filter = ['==', serviceProperty, filterValue];
+//     layerIds.forEach((layerId) => {
+//       map.setFilter(layerId, filter);
+//     });
+//   });
+// });
 
 
 // Define Food Bank Filter Column
@@ -601,6 +601,11 @@ serviceProperties.forEach((serviceProperty) => {
 
     
 // });
+
+// /*--------------------------------------------------------------------
+// About Us Page Code 
+// --------------------------------------------------------------------*/
+
 
 // ('fridge_gardens', b, c, d, e)
 
