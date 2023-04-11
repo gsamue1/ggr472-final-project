@@ -60,18 +60,32 @@ map.addSource('subway', {
     data: subway_geojson,
 });
 
-//TTC Subway Stations Layer 
-map.addLayer({
-    'id': 'ttc',
-    'type': 'circle',
-    'source': 'subway',
-    'paint': {
-        'circle-radius': 4,
-        'circle-color': 'blue', 
-        'circle-stroke-width': 1, //outline width
-        'circle-stroke-color': 'black'
-    },
-});
+//Adding Icon Image for Subway Data
+///Loading Image from external URL
+// map.loadImage(
+//     'https://www.freeiconspng.com/thumbs/subway-icon-png/subway-icon-png-7.png',
+//     //Configuring Error 
+//     (error, image) => {
+//         if (error) throw error;
+    
+//     //Adding Image to Map Style 
+//     map.addImage('ttc_point', image);
+//     }
+
+//     //TTC Subway Stations Layer 
+//     map.addLayer({
+//         'id': 'ttc', // layer id 
+//         'type': 'symbol',
+//         'source': 'subway', // data source
+//         'layout': {
+//             'icon-image': 'ttc_point', // reference image
+//             'icon-size': 3, // smaller sizes than food resources to prevent distraction
+//             'icon-allow-overlap': true // allow overlapping icons 
+//         }
+//     })
+// )
+
+
 
 //MONDAY - Adding Layer for Food Support Open on Monday
 //Note: Some points will be repeated between layer because they are open multiple days
@@ -82,7 +96,7 @@ map.addLayer({
     'source': 'food',
     'paint': {
         'circle-radius': 5,
-        'circle-color': [
+        'circle-color': [ //case when statement to apply conditional symbology
             'case',
        // Category 1: Food Bank Only  -- true in USER_food_ and false in the other four
             ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
