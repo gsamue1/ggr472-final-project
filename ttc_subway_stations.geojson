@@ -1,72 +1,1377 @@
 {
-"type": "FeatureCollection",
-"name": "ttc_subway_stations",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "STATION": "Kipling", "LINE": "Bloor-Danforth", "PLATFORM_L": "1", "AVG_PASSEN": 53640, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": "5247 Dundas St. West", "Opened": 1980 }, "geometry": { "type": "Point", "coordinates": [ -79.535832527917009, 43.637344929293448 ] } },
-{ "type": "Feature", "properties": { "STATION": "Islington", "LINE": "Bloor-Danforth", "PLATFORM_L": "1", "AVG_PASSEN": 43090, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": "3286 Bloor St. West", "Opened": 1968 }, "geometry": { "type": "Point", "coordinates": [ -79.524614729628269, 43.645374559836768 ] } },
-{ "type": "Feature", "properties": { "STATION": "Royal York", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 19440, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": "3012 Bloor St. West", "Opened": 1968 }, "geometry": { "type": "Point", "coordinates": [ -79.511327745581795, 43.648251446194188 ] } },
-{ "type": "Feature", "properties": { "STATION": "Old Mill", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 5780, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": "2672 Bloor St. West", "Opened": 1968 }, "geometry": { "type": "Point", "coordinates": [ -79.495097765718896, 43.650102025589639 ] } },
-{ "type": "Feature", "properties": { "STATION": "Jane", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 16730, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": "2440 Bloor St. West", "Opened": 1968 }, "geometry": { "type": "Point", "coordinates": [ -79.484454511874929, 43.649776625366741 ] } },
-{ "type": "Feature", "properties": { "STATION": "Runnymede", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 15900, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": "2218 Bloor St. West", "Opened": 1968 }, "geometry": { "type": "Point", "coordinates": [ -79.476300913588631, 43.651595113197573 ] } },
-{ "type": "Feature", "properties": { "STATION": "High Park", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 10880, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1968 }, "geometry": { "type": "Point", "coordinates": [ -79.466191412928495, 43.653976678407965 ] } },
-{ "type": "Feature", "properties": { "STATION": "Keele", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 14800, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.45986837385253, 43.655507110107443 ] } },
-{ "type": "Feature", "properties": { "STATION": "Dundas West", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 26500, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.45236741926135, 43.657086090296652 ] } },
-{ "type": "Feature", "properties": { "STATION": "Lansdowne", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 16490, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.442579880062596, 43.659001044046761 ] } },
-{ "type": "Feature", "properties": { "STATION": "Dufferin", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 27600, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.435468523584476, 43.660246638332353 ] } },
-{ "type": "Feature", "properties": { "STATION": "Ossington", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 25990, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.42593506593721, 43.662416603635165 ] } },
-{ "type": "Feature", "properties": { "STATION": "Christie", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 12060, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.418437176383989, 43.664106558010424 ] } },
-{ "type": "Feature", "properties": { "STATION": "Bathurst", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 28310, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.411302009678266, 43.66566729965983 ] } },
-{ "type": "Feature", "properties": { "STATION": "Spadina", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 35310, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.403975307717403, 43.667294869184175 ] } },
-{ "type": "Feature", "properties": { "STATION": "St. George", "LINE": "Bloor-Danforth", "PLATFORM_L": "1", "AVG_PASSEN": 119840, "LINE2": "Yonge-University-Spadina", "PLATFORM_1": "1", "SUBWAY_TRA": "True", "ADDRESS": null, "Opened": 1963 }, "geometry": { "type": "Point", "coordinates": [ -79.399519039114992, 43.668283540417555 ] } },
-{ "type": "Feature", "properties": { "STATION": "Bay", "LINE": "Bloor-Danforth", "PLATFORM_L": "1", "AVG_PASSEN": 28730, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.389895303850409, 43.670255122566751 ] } },
-{ "type": "Feature", "properties": { "STATION": "Bloor-Yonge", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 403530, "LINE2": "Yonge-University-Spadina", "PLATFORM_1": "1", "SUBWAY_TRA": "True", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.385729882193004, 43.670793078573254 ] } },
-{ "type": "Feature", "properties": { "STATION": "Sherbourne", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 25000, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.376547619836231, 43.672303707183978 ] } },
-{ "type": "Feature", "properties": { "STATION": "Castle Frank", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 8650, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.368473749080408, 43.673922211506657 ] } },
-{ "type": "Feature", "properties": { "STATION": "Broadview", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 30390, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.358658730096849, 43.67671774778541 ] } },
-{ "type": "Feature", "properties": { "STATION": "Chester", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 6980, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.352242615434463, 43.678309485619792 ] } },
-{ "type": "Feature", "properties": { "STATION": "Pape", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 27080, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.345060766333447, 43.679766490551636 ] } },
-{ "type": "Feature", "properties": { "STATION": "Donlands", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 9770, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.337795799827447, 43.681215608839523 ] } },
-{ "type": "Feature", "properties": { "STATION": "Greenwood", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 9910, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.330274491928378, 43.682783768814645 ] } },
-{ "type": "Feature", "properties": { "STATION": "Coxwell", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 16700, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.323080431433524, 43.684281706791651 ] } },
-{ "type": "Feature", "properties": { "STATION": "Woodbine", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 13810, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.312971139085107, 43.686505211983039 ] } },
-{ "type": "Feature", "properties": { "STATION": "Main Street", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 22670, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1968 }, "geometry": { "type": "Point", "coordinates": [ -79.302012572863788, 43.688974172151326 ] } },
-{ "type": "Feature", "properties": { "STATION": "Victoria Park", "LINE": "Bloor-Danforth", "PLATFORM_L": "2", "AVG_PASSEN": 25520, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1968 }, "geometry": { "type": "Point", "coordinates": [ -79.289459819760708, 43.694631458970946 ] } },
-{ "type": "Feature", "properties": { "STATION": "Warden", "LINE": "Bloor-Danforth", "PLATFORM_L": "1", "AVG_PASSEN": 26830, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1968 }, "geometry": { "type": "Point", "coordinates": [ -79.279067131106331, 43.711165438477096 ] } },
-{ "type": "Feature", "properties": { "STATION": "Kennedy", "LINE": "Bloor-Danforth", "PLATFORM_L": "1", "AVG_PASSEN": 68160, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1980 }, "geometry": { "type": "Point", "coordinates": [ -79.263665050913417, 43.732453255508958 ] } },
-{ "type": "Feature", "properties": { "STATION": "Union", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 102160, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.379904365476236, 43.645759479604628 ] } },
-{ "type": "Feature", "properties": { "STATION": "St. Andrew", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 41020, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1963 }, "geometry": { "type": "Point", "coordinates": [ -79.384814009875214, 43.647651452373317 ] } },
-{ "type": "Feature", "properties": { "STATION": "King", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 60270, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.377860826731521, 43.649135955871145 ] } },
-{ "type": "Feature", "properties": { "STATION": "Osgoode", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 23250, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1963 }, "geometry": { "type": "Point", "coordinates": [ -79.38662461032871, 43.650839845263711 ] } },
-{ "type": "Feature", "properties": { "STATION": "Queen", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 58710, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.379265893623256, 43.652380998939321 ] } },
-{ "type": "Feature", "properties": { "STATION": "St. Patrick", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 119820, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1963 }, "geometry": { "type": "Point", "coordinates": [ -79.388300447236375, 43.654832943049158 ] } },
-{ "type": "Feature", "properties": { "STATION": "Dundas", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 69150, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.380930072500746, 43.656343413905866 ] } },
-{ "type": "Feature", "properties": { "STATION": "Queen's Park", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 47390, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1963 }, "geometry": { "type": "Point", "coordinates": [ -79.390456983258076, 43.65985726502069 ] } },
-{ "type": "Feature", "properties": { "STATION": "College", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 49340, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.383080612913446, 43.66138180900807 ] } },
-{ "type": "Feature", "properties": { "STATION": "Wellesley", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 23120, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.383762181937811, 43.66524233295538 ] } },
-{ "type": "Feature", "properties": { "STATION": "Museum", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 8220, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1963 }, "geometry": { "type": "Point", "coordinates": [ -79.393544128875362, 43.667346319775447 ] } },
-{ "type": "Feature", "properties": { "STATION": "Rosedale", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 7520, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.388676776662464, 43.677044619898531 ] } },
-{ "type": "Feature", "properties": { "STATION": "Summerhill", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 5920, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.391169027096581, 43.683331680364468 ] } },
-{ "type": "Feature", "properties": { "STATION": "St. Clair", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 28680, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.393967532442673, 43.688274335087257 ] } },
-{ "type": "Feature", "properties": { "STATION": "Davisville", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 22970, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.397359787637313, 43.698040629661683 ] } },
-{ "type": "Feature", "properties": { "STATION": "Eglinton", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 70720, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1954 }, "geometry": { "type": "Point", "coordinates": [ -79.398607629386689, 43.706608563807833 ] } },
-{ "type": "Feature", "properties": { "STATION": "Lawrence", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 22230, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1973 }, "geometry": { "type": "Point", "coordinates": [ -79.402170536126818, 43.724961674103874 ] } },
-{ "type": "Feature", "properties": { "STATION": "York Mills", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 27260, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1973 }, "geometry": { "type": "Point", "coordinates": [ -79.406525686164656, 43.744173695344273 ] } },
-{ "type": "Feature", "properties": { "STATION": "Sheppard-Yonge", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 123480, "LINE2": "Sheppard", "PLATFORM_1": "1", "SUBWAY_TRA": "True", "ADDRESS": null, "Opened": 1974 }, "geometry": { "type": "Point", "coordinates": [ -79.410939739138456, 43.761511343379894 ] } },
-{ "type": "Feature", "properties": { "STATION": "North York Centre", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 25480, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1987 }, "geometry": { "type": "Point", "coordinates": [ -79.412688260691311, 43.768793796606815 ] } },
-{ "type": "Feature", "properties": { "STATION": "Finch", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 97400, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1974 }, "geometry": { "type": "Point", "coordinates": [ -79.415500226285815, 43.779832353219305 ] } },
-{ "type": "Feature", "properties": { "STATION": "Spadina", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 13040, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1978 }, "geometry": { "type": "Point", "coordinates": [ -79.405267162509631, 43.670320450279206 ] } },
-{ "type": "Feature", "properties": { "STATION": "Dupont", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 16870, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1978 }, "geometry": { "type": "Point", "coordinates": [ -79.40708108875603, 43.674971467891716 ] } },
-{ "type": "Feature", "properties": { "STATION": "St Clair West", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 53770, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1978 }, "geometry": { "type": "Point", "coordinates": [ -79.415408494901769, 43.684123207009307 ] } },
-{ "type": "Feature", "properties": { "STATION": "Eglinton West", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "2", "AVG_PASSEN": 19850, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1978 }, "geometry": { "type": "Point", "coordinates": [ -79.436181328795598, 43.699429652124692 ] } },
-{ "type": "Feature", "properties": { "STATION": "Glencairn", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 5560, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1978 }, "geometry": { "type": "Point", "coordinates": [ -79.441256489084694, 43.709547053638211 ] } },
-{ "type": "Feature", "properties": { "STATION": "Lawrence West", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 20560, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1978 }, "geometry": { "type": "Point", "coordinates": [ -79.444166963468916, 43.715922768360372 ] } },
-{ "type": "Feature", "properties": { "STATION": "Yorkdale", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 24930, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1978 }, "geometry": { "type": "Point", "coordinates": [ -79.44785511376611, 43.725556013057819 ] } },
-{ "type": "Feature", "properties": { "STATION": "Wilson", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 21680, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1978 }, "geometry": { "type": "Point", "coordinates": [ -79.4499866823312, 43.734214230186801 ] } },
-{ "type": "Feature", "properties": { "STATION": "Downsview", "LINE": "Yonge-University-Spadina", "PLATFORM_L": "1", "AVG_PASSEN": 31600, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 1966 }, "geometry": { "type": "Point", "coordinates": [ -79.462447529002873, 43.749798493442228 ] } },
-{ "type": "Feature", "properties": { "STATION": "Bayview", "LINE": "Sheppard", "PLATFORM_L": "1", "AVG_PASSEN": 8200, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 2002 }, "geometry": { "type": "Point", "coordinates": [ -79.387802923619645, 43.766763964174302 ] } },
-{ "type": "Feature", "properties": { "STATION": "Bessarion", "LINE": "Sheppard", "PLATFORM_L": "1", "AVG_PASSEN": 2590, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 2002 }, "geometry": { "type": "Point", "coordinates": [ -79.376648050589239, 43.76918324058677 ] } },
-{ "type": "Feature", "properties": { "STATION": "Leslie", "LINE": "Sheppard", "PLATFORM_L": "1", "AVG_PASSEN": 5610, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 2002 }, "geometry": { "type": "Point", "coordinates": [ -79.366826349651575, 43.770931052438733 ] } },
-{ "type": "Feature", "properties": { "STATION": "Don Mills", "LINE": "Sheppard", "PLATFORM_L": "1", "AVG_PASSEN": 31500, "LINE2": null, "PLATFORM_1": null, "SUBWAY_TRA": "False", "ADDRESS": null, "Opened": 2002 }, "geometry": { "type": "Point", "coordinates": [ -79.346261720871496, 43.775318204458685 ] } }
-]
+    "type": "FeatureCollection",
+    "name": "ttc_subway_stations",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Kipling",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 53640,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": "5247 Dundas St. West",
+                "Opened": 1980
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.535832527917009,
+                    43.637344929293448
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Islington",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 43090,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": "3286 Bloor St. West",
+                "Opened": 1968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.524614729628269,
+                    43.645374559836768
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Royal York",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 19440,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": "3012 Bloor St. West",
+                "Opened": 1968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.511327745581795,
+                    43.648251446194188
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Old Mill",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 5780,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": "2672 Bloor St. West",
+                "Opened": 1968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.495097765718896,
+                    43.650102025589639
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Jane",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 16730,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": "2440 Bloor St. West",
+                "Opened": 1968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.484454511874929,
+                    43.649776625366741
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Runnymede",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 15900,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": "2218 Bloor St. West",
+                "Opened": 1968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.476300913588631,
+                    43.651595113197573
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "High Park",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 10880,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.466191412928495,
+                    43.653976678407965
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Keele",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 14800,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.45986837385253,
+                    43.655507110107443
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Dundas West",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 26500,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.45236741926135,
+                    43.657086090296652
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Lansdowne",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 16490,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.442579880062596,
+                    43.659001044046761
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Dufferin",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 27600,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.435468523584476,
+                    43.660246638332353
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Ossington",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 25990,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.42593506593721,
+                    43.662416603635165
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Christie",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 12060,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.418437176383989,
+                    43.664106558010424
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Bathurst",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 28310,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.411302009678266,
+                    43.66566729965983
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Spadina",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 35310,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.403975307717403,
+                    43.667294869184175
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "St. George",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 119840,
+                "LINE2": "Yonge-University-Spadina",
+                "PLATFORM_1": "1",
+                "SUBWAY_TRA": "True",
+                "ADDRESS": null,
+                "Opened": 1963
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.399519039114992,
+                    43.668283540417555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Bay",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 28730,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.389895303850409,
+                    43.670255122566751
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Bloor-Yonge",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 403530,
+                "LINE2": "Yonge-University-Spadina",
+                "PLATFORM_1": "1",
+                "SUBWAY_TRA": "True",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.385729882193004,
+                    43.670793078573254
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Sherbourne",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 25000,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.376547619836231,
+                    43.672303707183978
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Castle Frank",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 8650,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.368473749080408,
+                    43.673922211506657
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Broadview",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 30390,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.358658730096849,
+                    43.67671774778541
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Chester",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 6980,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.352242615434463,
+                    43.678309485619792
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Pape",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 27080,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.345060766333447,
+                    43.679766490551636
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Donlands",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 9770,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.337795799827447,
+                    43.681215608839523
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Greenwood",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 9910,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.330274491928378,
+                    43.682783768814645
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Coxwell",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 16700,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.323080431433524,
+                    43.684281706791651
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Woodbine",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 13810,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.312971139085107,
+                    43.686505211983039
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Main Street",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 22670,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.302012572863788,
+                    43.688974172151326
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Victoria Park",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 25520,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.289459819760708,
+                    43.694631458970946
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Warden",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 26830,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.279067131106331,
+                    43.711165438477096
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Kennedy",
+                "LINE": "Bloor-Danforth",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 68160,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1980
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.263665050913417,
+                    43.732453255508958
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Union",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 102160,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.379904365476236,
+                    43.645759479604628
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "St. Andrew",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 41020,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1963
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.384814009875214,
+                    43.647651452373317
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "King",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 60270,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.377860826731521,
+                    43.649135955871145
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Osgoode",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 23250,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1963
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.38662461032871,
+                    43.650839845263711
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Queen",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 58710,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.379265893623256,
+                    43.652380998939321
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "St. Patrick",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 119820,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1963
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.388300447236375,
+                    43.654832943049158
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Dundas",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 69150,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.380930072500746,
+                    43.656343413905866
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Queen's Park",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 47390,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1963
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.390456983258076,
+                    43.65985726502069
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "College",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 49340,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.383080612913446,
+                    43.66138180900807
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Wellesley",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 23120,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.383762181937811,
+                    43.66524233295538
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Museum",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 8220,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1963
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.393544128875362,
+                    43.667346319775447
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Rosedale",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 7520,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.388676776662464,
+                    43.677044619898531
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Summerhill",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 5920,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.391169027096581,
+                    43.683331680364468
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "St. Clair",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 28680,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.393967532442673,
+                    43.688274335087257
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Davisville",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 22970,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.397359787637313,
+                    43.698040629661683
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Eglinton",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 70720,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1954
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.398607629386689,
+                    43.706608563807833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Lawrence",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 22230,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1973
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.402170536126818,
+                    43.724961674103874
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "York Mills",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 27260,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1973
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.406525686164656,
+                    43.744173695344273
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Sheppard-Yonge",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 123480,
+                "LINE2": "Sheppard",
+                "PLATFORM_1": "1",
+                "SUBWAY_TRA": "True",
+                "ADDRESS": null,
+                "Opened": 1974
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.410939739138456,
+                    43.761511343379894
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "North York Centre",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 25480,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1987
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.412688260691311,
+                    43.768793796606815
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Finch",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 97400,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1974
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.415500226285815,
+                    43.779832353219305
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Spadina",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 13040,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1978
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.405267162509631,
+                    43.670320450279206
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Dupont",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 16870,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1978
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.40708108875603,
+                    43.674971467891716
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "St Clair West",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 53770,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1978
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.415408494901769,
+                    43.684123207009307
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Eglinton West",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "2",
+                "AVG_PASSEN": 19850,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1978
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.436181328795598,
+                    43.699429652124692
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Glencairn",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 5560,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1978
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.441256489084694,
+                    43.709547053638211
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Lawrence West",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 20560,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1978
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.444166963468916,
+                    43.715922768360372
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Yorkdale",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 24930,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1978
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.44785511376611,
+                    43.725556013057819
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Wilson",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 21680,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1978
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.4499866823312,
+                    43.734214230186801
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Downsview",
+                "LINE": "Yonge-University-Spadina",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 31600,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 1966
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.462447529002873,
+                    43.749798493442228
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Bayview",
+                "LINE": "Sheppard",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 8200,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 2002
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.387802923619645,
+                    43.766763964174302
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Bessarion",
+                "LINE": "Sheppard",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 2590,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 2002
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.376648050589239,
+                    43.76918324058677
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Leslie",
+                "LINE": "Sheppard",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 5610,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 2002
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.366826349651575,
+                    43.770931052438733
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "STATION": "Don Mills",
+                "LINE": "Sheppard",
+                "PLATFORM_L": "1",
+                "AVG_PASSEN": 31500,
+                "LINE2": null,
+                "PLATFORM_1": null,
+                "SUBWAY_TRA": "False",
+                "ADDRESS": null,
+                "Opened": 2002
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.346261720871496,
+                    43.775318204458685
+                ]
+            }
+        }
+    ]
 }
