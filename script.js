@@ -349,7 +349,7 @@ map.addControl(new mapboxgl.FullscreenControl());
 const geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl,
-    countries: "ca" 
+    countries: "ca"
 });
 
 //Positioning Geocoder on Page
@@ -404,6 +404,7 @@ document.getElementById('returnbutton').addEventListener('click', () => {
                 .setHTML("<b>" + name + "</b>" 
                     + '<br>' + ' ' 
                     + '<br>' + "<b>" + 'Address: ' + "</b>" + address_name + ", " + postal_code
+                    + '<br>' + '<a href="' + "https://www.google.com/maps/place/" + address_name + ", " + postal_code + '" target="_blank">' + "Directions on Google Maps" + '</a>' 
                     + '<br>' + "<b>" + 'Services: ' + "</b>" + services
                     + '<br>' + "<b>" + 'Operating Hours: ' + "</b>" + hours
                     + '<br>' + "<b>" + 'Appointment Required: ' + "</b>" + appt
@@ -414,6 +415,8 @@ document.getElementById('returnbutton').addEventListener('click', () => {
                     + '<br>' + "<b>" + 'Wheelchair Accessible: ' + "</b>" + access)
                 .addTo(map);
             });
+
+            
         
             // Change the cursor to a pointer when the mouse is over the layer
             map.on('mouseenter', layerIds, () => {

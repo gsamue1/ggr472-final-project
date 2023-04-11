@@ -25,7 +25,7 @@
     padding: 10px; /*around elements inside of overlay*/
     max-width: fit-content;
     overflow: visible;
-    z-index: 2;
+    z-index: 1;
 }
 
 /* Geocoder Formatting */
@@ -61,6 +61,11 @@
   padding: 10px;
   overflow: visible;
   z-index: 1;
+}
+
+/* Pop-Up Formatting */
+.food_popups.mapboxgl-popup-content {
+  z-index: 2;
 }
 
 /* Legend Formatting  */
