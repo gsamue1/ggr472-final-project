@@ -23,25 +23,59 @@ const map = new mapboxgl.Map({
 /*--------------------------------------------------------------------
 Setting Up Accessible Food Geojson Variable
 --------------------------------------------------------------------*/
-// //Empty variable to store Collision Data Responses from Fetch Function 
+//Empty variables to store Collision Data Responses from Fetch Function 
+//Food Support Locations 
 let foodresources_geojson;
 
-// Fetch GeoJSON from URL and store response
+//TTC Subway station stops 
+let subway_geojson;
+
+// Food Support Locations -- Fetch GeoJSON from URL for and store response
 fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/food_support_locations_clean.geojson')
-    .then(response => response.json())
-    .then(response => {
-        console.log(response); //Check response in console
-        foodresources_geojson = response; // Store geojson as variable using URL from fetch response
+    .then(response1 => response1.json())
+    .then(response1 => {
+        console.log(response1); //Check response in console
+        foodresources_geojson = response1; // Store geojson as variable using URL from fetch response
     });
 
+// Food Support Locations -- Fetch GeoJSON from URL for and store response
+fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/ttc_subway_stations.geojson')
+    .then(response2 => response2.json())
+    .then(response2 => {
+        console.log(response2); //Check response in console
+        subway_geojson = response2; // Store geojson as variable using URL from fetch response
+    });
 
 //MAPPING FOOD LOCATIONS - Add datasource using GeoJSON variable
 map.on('load', () => {
+//Adding Food Bank Geojson Source
 map.addSource('food', {
     type: 'geojson',
     data: foodresources_geojson,
 });
 
+//Adding Subway Data Source
+map.addSource('subway', {
+    type: 'geojson',
+    data: subway_geojson,
+});
+
+//TTC Subway Stations Layer 
+map.addLayer({
+    'id': 'ttc',
+    'type': 'circle',
+    'source': 'subway',
+    'paint': {
+        'circle-radius': 4,
+        'circle-color': 'blue', 
+        'circle-stroke-width': 1, //outline width
+        'circle-stroke-color': 'black'
+    },
+});
+
+//MONDAY - Adding Layer for Food Support Open on Monday
+//Note: Some points will be repeated between layer because they are open multiple days
+/////// Identical symbology has been used to retain the illusion of one point
 map.addLayer({
     'id': 'monday',
     'type': 'circle',
@@ -50,31 +84,37 @@ map.addLayer({
         'circle-radius': 5,
         'circle-color': [
             'case',
-       // Category 1: Food Bank Only  -- yes in USER_food_ and no in the other four
-          ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#2A9D8F', // if true in col1 and no in the rest
-      // Category 2: Takeout Meals Only 
-          ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#b0e96a', // if yes in col2 and no in the rest
-      // Category 3: Sit Down Meal Program Only
-          ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#E9C46A', // if yes in col3 and no in the rest
-      // Category 4: Community Program Only
-          ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#F4A261', // if yes in col4 and no in the rest
-       // Category 5: Community Fridges and Gardens Only
-          ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-          '#e44040',
-          '#264653'  //Multi service location -- true in 2 or more of the boolean columns for service type, if it is not only true for one it has to be true for more than one
-          // ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-          // '#264653', // if true in 2 or more columns
+       // Category 1: Food Bank Only  -- true in USER_food_ and false in the other four
+            ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#2A9D8F', 
+        // Category 2: Takeout Meals Only  -- true in USER_takeo and false in the other four
+            ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#b0e96a', 
+        // Category 3: Sit Down Meal Program Only  -- true in USER_meal_ and false in the other four
+            ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#E9C46A', 
+        // Category 4: Community Program Only -- true in USER_commu and false in the other four
+            ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#F4A261', 
+            // Category 5: Community Fridges and Gardens Only -- true in USER_com_1 and false in the other four
+            ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
+            '#e44040',
+            //Category 6: Multiple Service Location -- true in 2 or more of the boolean columns for service type
+            //If a point is not only true for one column it has to be true for more than one (We built dataset and checked that everything assigned at least one category)
+            '#264653'  
+
+          //Back Up Code if wanting to differentiate no category from multiservice locations -- Quality Control Check 
+            // ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
+            // '#264653', // if true in 2 or more columns
           ], 
         'circle-stroke-width': 1, //outline width
         'circle-stroke-color': 'black'
     },
-    'filter': ['==', ['get', 'USER_monda'], true]
+    'filter': ['==', ['get', 'USER_monda'], true] // Filtering for all points open on Monday (User_monda = true)
 });
 
+
+//TUESDAY - Adding Layer for Food Support Open on Monday
 map.addLayer({
     'id': 'tuesday',
     'type': 'circle',
@@ -83,31 +123,33 @@ map.addLayer({
         'circle-radius': 5,
         'circle-color': [
             'case',
-        // Category 1: Food Bank Only  -- yes in USER_food_ and no in the other four
-           ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-           '#2A9D8F', // if true in col1 and no in the rest
-       // Category 2: Takeout Meals Only 
-           ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-           '#8bc049', // if yes in col2 and no in the rest
-       // Category 3: Sit Down Meal Program Only
-           ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-           '#E9C46A', // if yes in col3 and no in the rest
-       // Category 4: Community Program Only
-           ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-           '#F4A261', // if yes in col4 and no in the rest
-        // Category 5: Community Fridges and Gardens Only
-           ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-           '#e44040',
-           '#264653'  //Multi service location -- true in 2 or more of the boolean columns for service type, if it is not only true for one it has to be true for more than one
-           // ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-           // '#264653', // if true in 2 or more columns
-           ],  
+       // Category 1: Food Bank Only  -- true in USER_food_ and false in the other four
+            ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#2A9D8F', 
+        // Category 2: Takeout Meals Only  -- true in USER_takeo and false in the other four
+            ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#b0e96a', 
+        // Category 3: Sit Down Meal Program Only  -- true in USER_meal_ and false in the other four
+            ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#E9C46A', 
+        // Category 4: Community Program Only -- true in USER_commu and false in the other four
+            ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#F4A261', 
+        // Category 5: Community Fridges and Gardens Only -- true in USER_com_1 and false in the other four
+            ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
+            '#e44040',
+        //Category 6: Multiple Service Location -- true in 2 or more of the boolean columns for service type
+        //If a point is not only true for one column it has to be true for more than one (We built dataset and checked that everything assigned at least one category)
+            '#264653'  
+            ],  
         'circle-stroke-width': 1, //outline width
         'circle-stroke-color': 'black'
     },
     'filter': ['==', ['get', 'USER_tuesd'], true]
 });
 
+
+//WEDNESDAY - Adding Layer for Food Support Open on Monday
 map.addLayer({
     'id': 'wednesday',
     'type': 'circle',
@@ -116,22 +158,24 @@ map.addLayer({
         'circle-radius': 5,
         'circle-color': [
             'case',
-         // Category 1: Food Bank Only  -- yes in USER_food_ and no in the other four
+        // Category 1: Food Bank Only  -- true in USER_food_ and false in the other four
              ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-             '#2A9D8F',
-         // Category 2: Takeout Meals Only 
+             '#2A9D8F', 
+         // Category 2: Takeout Meals Only  -- true in USER_takeo and false in the other four
              ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-             '#8bc049', 
-         // Category 3: Sit Down Meal Program Only
+             '#b0e96a', 
+         // Category 3: Sit Down Meal Program Only  -- true in USER_meal_ and false in the other four
              ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
              '#E9C46A', 
-         // Category 4: Community Program Only
+         // Category 4: Community Program Only -- true in USER_commu and false in the other four
              ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
              '#F4A261', 
-          // Category 5: Community Fridges and Gardens Only
+          // Category 5: Community Fridges and Gardens Only -- true in USER_com_1 and false in the other four
              ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
              '#e44040',
-             '#264653'  //Multi service location -- true in 2 or more of the boolean columns for service type, if it is not only true for one it has to be true for more than one
+          //Category 6: Multiple Service Location -- true in 2 or more of the boolean columns for service type
+          //If a point is not only true for one column it has to be true for more than one (We built dataset and checked that everything assigned at least one category)
+             '#264653'  
              ], 
         'circle-stroke-width': 1, //outline width
         'circle-stroke-color': 'black'
@@ -140,6 +184,7 @@ map.addLayer({
 });
 
 
+//THURSDAY - Adding Layer for Food Support Open on Monday
 map.addLayer({
     'id': 'thursday',
     'type': 'circle',
@@ -148,24 +193,24 @@ map.addLayer({
         'circle-radius': 5,
         'circle-color': [
             'case',
-        // Category 1: Food Bank Only  -- yes in USER_food_ and no in the other four
-           ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-           '#2A9D8F', // if true in col1 and no in the rest
-       // Category 2: Takeout Meals Only 
-           ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-           '#8bc049', // if yes in col2 and no in the rest
-       // Category 3: Sit Down Meal Program Only
-           ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-           '#E9C46A', // if yes in col3 and no in the rest
-       // Category 4: Community Program Only
-           ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-           '#F4A261', // if yes in col4 and no in the rest
-        // Category 5: Community Fridges and Gardens Only
-           ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-           '#e44040',
-           '#264653'  //Multi service location -- true in 2 or more of the boolean columns for service type, if it is not only true for one it has to be true for more than one
-           // ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-           // '#264653', // if true in 2 or more columns
+        // Category 1: Food Bank Only  -- true in USER_food_ and false in the other four
+            ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#2A9D8F', 
+        // Category 2: Takeout Meals Only  -- true in USER_takeo and false in the other four
+            ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#b0e96a', 
+        // Category 3: Sit Down Meal Program Only  -- true in USER_meal_ and false in the other four
+            ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#E9C46A', 
+        // Category 4: Community Program Only -- true in USER_commu and false in the other four
+            ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#F4A261', 
+        // Category 5: Community Fridges and Gardens Only -- true in USER_com_1 and false in the other four
+            ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
+            '#e44040',
+        //Category 6: Multiple Service Location -- true in 2 or more of the boolean columns for service type
+        //If a point is not only true for one column it has to be true for more than one (We built dataset and checked that everything assigned at least one category)
+            '#264653'  
            ],
         'circle-stroke-width': 1, //outline width
         'circle-stroke-color': 'black'
@@ -173,6 +218,8 @@ map.addLayer({
     'filter': ['==', ['get', 'USER_thurs'], true]
 });
 
+
+//FRIDAY - Adding Layer for Food Support Open on Monday
 map.addLayer({
     'id': 'friday',
     'type': 'circle',
@@ -181,24 +228,24 @@ map.addLayer({
         'circle-radius': 5,
         'circle-color': [
             'case',
-        // Category 1: Food Bank Only  -- yes in USER_food_ and no in the other four
-          ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#2A9D8F', // if true in col1 and no in the rest
-      // Category 2: Takeout Meals Only 
-          ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#8bc049', // if yes in col2 and no in the rest
-      // Category 3: Sit Down Meal Program Only
-          ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#E9C46A', // if yes in col3 and no in the rest
-      // Category 4: Community Program Only
-          ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#F4A261', // if yes in col4 and no in the rest
-       // Category 5: Community Fridges and Gardens Only
-          ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-          '#e44040',
-          '#264653'  //Multi service location -- true in 2 or more of the boolean columns for service type, if it is not only true for one it has to be true for more than one
-          // ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-          // '#264653', // if true in 2 or more columns
+        // Category 1: Food Bank Only  -- true in USER_food_ and false in the other four
+            ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#2A9D8F', 
+        // Category 2: Takeout Meals Only  -- true in USER_takeo and false in the other four
+            ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#b0e96a', 
+        // Category 3: Sit Down Meal Program Only  -- true in USER_meal_ and false in the other four
+            ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#E9C46A', 
+        // Category 4: Community Program Only -- true in USER_commu and false in the other four
+            ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#F4A261', 
+        // Category 5: Community Fridges and Gardens Only -- true in USER_com_1 and false in the other four
+            ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
+            '#e44040',
+        //Category 6: Multiple Service Location -- true in 2 or more of the boolean columns for service type
+        //If a point is not only true for one column it has to be true for more than one (We built dataset and checked that everything assigned at least one category)
+            '#264653'  
           ],
         'circle-stroke-width': 1, //outline width
         'circle-stroke-color': 'black'
@@ -206,6 +253,8 @@ map.addLayer({
     'filter': ['==', ['get', 'USER_frida'], true]
 });
 
+
+//SATURDAY - Adding Layer for Food Support Open on Monday
 map.addLayer({
     'id': 'saturday',
     'type': 'circle',
@@ -214,24 +263,24 @@ map.addLayer({
         'circle-radius': 5,
         'circle-color': [
             'case',
-       // Category 1: Food Bank Only  -- yes in USER_food_ and no in the other four
-          ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#2A9D8F', // if true in col1 and no in the rest
-      // Category 2: Takeout Meals Only 
-          ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#8bc049', // if yes in col2 and no in the rest
-      // Category 3: Sit Down Meal Program Only
-          ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#E9C46A', // if yes in col3 and no in the rest
-      // Category 4: Community Program Only
-          ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-          '#F4A261', // if yes in col4 and no in the rest
-       // Category 5: Community Fridges and Gardens Only
-          ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
-          '#e44040',
-          '#264653'  //Multi service location -- true in 2 or more of the boolean columns for service type, if it is not only true for one it has to be true for more than one
-          // ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-          // '#264653', // if true in 2 or more columns
+       // Category 1: Food Bank Only  -- true in USER_food_ and false in the other four
+            ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#2A9D8F', 
+        // Category 2: Takeout Meals Only  -- true in USER_takeo and false in the other four
+            ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#b0e96a', 
+        // Category 3: Sit Down Meal Program Only  -- true in USER_meal_ and false in the other four
+            ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#E9C46A', 
+        // Category 4: Community Program Only -- true in USER_commu and false in the other four
+            ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
+            '#F4A261', 
+        // Category 5: Community Fridges and Gardens Only -- true in USER_com_1 and false in the other four
+            ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
+            '#e44040',
+        //Category 6: Multiple Service Location -- true in 2 or more of the boolean columns for service type
+        //If a point is not only true for one column it has to be true for more than one (We built dataset and checked that everything assigned at least one category)
+            '#264653'  
           ],
           'circle-stroke-width': 1, //outline width
           'circle-stroke-color': 'black'
@@ -240,6 +289,8 @@ map.addLayer({
     'filter': ['==', ['get', 'USER_satur'], true]
 });
 
+
+//SUNDAY - Adding Layer for Food Support Open on Monday
 map.addLayer({
     'id': 'sunday',
     'type': 'circle',
@@ -248,24 +299,24 @@ map.addLayer({
         'circle-radius': 5,
             'circle-color': [
                 'case',
-        // Category 1: Food Bank Only  -- yes in USER_food_ and no in the other four
+        // Category 1: Food Bank Only  -- true in USER_food_ and false in the other four
             ['all', ['==', ['get', 'USER_food_'], true], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-            '#2A9D8F', // if true in col1 and no in the rest
-        // Category 2: Takeout Meals Only 
+            '#2A9D8F', 
+        // Category 2: Takeout Meals Only  -- true in USER_takeo and false in the other four
             ['all', ['==', ['get', 'USER_takeo'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-            '#8bc049', // if yes in col2 and no in the rest
-        // Category 3: Sit Down Meal Program Only
+            '#b0e96a', 
+        // Category 3: Sit Down Meal Program Only  -- true in USER_meal_ and false in the other four
             ['all', ['==', ['get', 'USER_meal_'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_commu'], false], ['==', ['get', 'USER_com_1'], false]],
-            '#E9C46A', // if yes in col3 and no in the rest
-        // Category 4: Community Program Only
+            '#E9C46A', 
+        // Category 4: Community Program Only -- true in USER_commu and false in the other four
             ['all', ['==', ['get', 'USER_commu'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_com_1'], false]],
-            '#F4A261', // if yes in col4 and no in the rest
-         // Category 5: Community Fridges and Gardens Only
+            '#F4A261', 
+        // Category 5: Community Fridges and Gardens Only -- true in USER_com_1 and false in the other four
             ['all', ['==', ['get', 'USER_com_1'], true], ['==', ['get', 'USER_food_'], false], ['==', ['get', 'USER_takeo'], false], ['==', ['get', 'USER_meal_'], false], ['==', ['get', 'USER_commu'], false]],
             '#e44040',
-            '#264653'  //Multi service location -- true in 2 or more of the boolean columns for service type, if it is not only true for one it has to be true for more than one
-            // ['>=', ['+', ['to-number', ['get', 'USER_food_'], ['get', 'USER_takeo'], ['get', 'USER_meal_'], ['get', 'USER_commu'], ['get', 'USER_com_1']]], 2],
-            // '#264653', // if true in 2 or more columns
+        //Category 6: Multiple Service Location -- true in 2 or more of the boolean columns for service type
+        //If a point is not only true for one column it has to be true for more than one (We built dataset and checked that everything assigned at least one category)
+            '#264653'  
             ],
         'circle-stroke-width': 1, //outline width
         'circle-stroke-color': 'black'
@@ -274,66 +325,6 @@ map.addLayer({
     'filter': ['==', ['get', 'USER_sunda'], true]
 });
 });
-
-// /*--------------------------------------------------------------------
-// FILTERING FOR SERVICE TYPE
-// --------------------------------------------------------------------*/
-
-// let foodbank = true;
-// let takeout = true;
-// let sitdown = true;
-// let commprog = true;
-// let commgardfrid = true;
-
-// // Filter for Food Banks
-// document.getElementById('foodbankcheck').addEventListener('change', (e) => {
-//    foodbank = !foodbank;
-//     map.setLayoutProperty( // change the visiblity of the layer of data
-//         'food_banks',
-//         'visibility',
-//         e.target.checked ? 'visible' : 'none'
-//     )
-// });
-
-// // Filter for Takeout Meals
-// document.getElementById('takeoutcheck').addEventListener('change', (e) => {
-//     takeout = !takeout;
-//     map.setLayoutProperty( // change the visiblity of the layer of data
-//         'takeout_meals',
-//         'visibility',
-//         e.target.checked ? 'visible' : 'none'
-//     )
-// });
-
-// // Filter for Sit Down Meal Programmes
-// document.getElementById('mealprogcheck').addEventListener('change', (e) => {
-//     sitdown = !sitdown;
-//     map.setLayoutProperty( // change the visiblity of the layer of data
-//         'sit_meals',
-//         'visibility',
-//         e.target.checked ? 'visible' : 'none'
-//     )
-// });
-
-// // Filter for Education and Community Programming
-// document.getElementById('educheck').addEventListener('change', (e) => {
-//     commprog = !commprog;
-//     map.setLayoutProperty( // change the visiblity of the layer of data
-//         'community_programs',
-//         'visibility',
-//         e.target.checked ? 'visible' : 'none'
-//     )
-// });
-
-// // Filter for Community Gardens or Kitchens 
-// document.getElementById('resourcecheck').addEventListener('change', (e) => {
-//     commgardfrid = !commgardfrid;
-//     map.setLayoutProperty( // change the visiblity of the layer of data
-//         'fridge_gardens',
-//         'visibility',
-//         e.target.checked ? 'visible' : 'none'
-//     )
-// });
 
 // /*--------------------------------------------------------------------
 // ADDING MAP CONTROLS
@@ -399,7 +390,7 @@ document.getElementById('returnbutton').addEventListener('click', () => {
         //Variable testing 
            console.log(website);
 
-            var pop_up = new mapboxgl.Popup()
+            var pop_up = new mapboxgl.Popup({className: "food_popups"})
                 .setLngLat(e.lngLat)
                 .setHTML("<b>" + name + "</b>" 
                     + '<br>' + ' ' 
@@ -761,4 +752,66 @@ document.getElementById('suncheck').addEventListener('change', (e) => {
 //         'circle-stroke-color': 'black'
 //     },
 //     'filter': ['==', ['get', 'USER_com_1'], true]
+// });
+
+
+
+// /*--------------------------------------------------------------------
+// FILTERING FOR SERVICE TYPE
+// --------------------------------------------------------------------*/
+
+// let foodbank = true;
+// let takeout = true;
+// let sitdown = true;
+// let commprog = true;
+// let commgardfrid = true;
+
+// // Filter for Food Banks
+// document.getElementById('foodbankcheck').addEventListener('change', (e) => {
+//    foodbank = !foodbank;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'food_banks',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
+// // Filter for Takeout Meals
+// document.getElementById('takeoutcheck').addEventListener('change', (e) => {
+//     takeout = !takeout;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'takeout_meals',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
+// // Filter for Sit Down Meal Programmes
+// document.getElementById('mealprogcheck').addEventListener('change', (e) => {
+//     sitdown = !sitdown;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'sit_meals',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
+// // Filter for Education and Community Programming
+// document.getElementById('educheck').addEventListener('change', (e) => {
+//     commprog = !commprog;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'community_programs',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
+// });
+
+// // Filter for Community Gardens or Kitchens 
+// document.getElementById('resourcecheck').addEventListener('change', (e) => {
+//     commgardfrid = !commgardfrid;
+//     map.setLayoutProperty( // change the visiblity of the layer of data
+//         'fridge_gardens',
+//         'visibility',
+//         e.target.checked ? 'visible' : 'none'
+//     )
 // });
