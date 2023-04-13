@@ -78,11 +78,6 @@
   z-index: 1;
 }
 
-/* Pop-Up Formatting */
-.food_popups.mapboxgl-popup-content {
-  z-index: 2;
-}
-
 /* Legend Formatting  */
 .my-legend {
     background-color: #fff;
