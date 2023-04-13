@@ -102,9 +102,9 @@ map.addLayer({
     "type": "fill",
     "source": "walkability",
     "paint": {
-        'fill-color': "orange",
+        'fill-color': "#9400ca",
         'fill-opacity': 0.2,
-        'fill-outline-color': "orange"
+        'fill-outline-color': "#9400ca"
     },
 });
 
@@ -572,7 +572,7 @@ document.getElementById('ttccheck').addEventListener('change', function() {
   });
 });
 
-// Add a variable to store the state of the checkbox
+// Add a variable to store the Walking Buffer checkbox
 var walking_checkbox = document.getElementById('walkcheck')
 
 //Attach event listener to the checkbox
