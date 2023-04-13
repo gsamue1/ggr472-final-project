@@ -88,6 +88,28 @@ map.loadImage(
     }
 );
 
+//Set Up Walkability Buffers
+let walking_distance = turf.buffer(subway_geojson, 800, {units: 'meters'}); //800 meter buffer represents approixmately 10 minute walking area radius 
+
+map.addSource('walkability', {
+    "type": "geojson",
+    "data": walking_distance  //plugging in walking_distance buffers
+});
+
+//Show buffers on map using styling
+map.addLayer({
+    "id": "walking_circle",
+    "type": "fill",
+    "source": "walkability",
+    "paint": {
+        'fill-color': "orange",
+        'fill-opacity': 0.2,
+        'fill-outline-color': "orange"
+    },
+});
+
+map.setLayoutProperty('walking_circle', 'visibility', 'none')
+
 //MONDAY - Adding Layer for Food Support Open on Monday
 //Note: Some points will be repeated between layer because they are open multiple days
 /////// Identical symbology has been used to retain the illusion of one point
@@ -402,9 +424,6 @@ document.getElementById('returnbutton').addEventListener('click', () => {
             let access = e.features[0].properties.USER_acces;
             let target = e.features[0].properties.USER_targe;
 
-        //Variable testing 
-           console.log(website);
-
             var pop_up = new mapboxgl.Popup({className: "food_popups"})
                 .setLngLat(e.lngLat)
                 .setHTML("<b>" + name + "</b>" 
@@ -433,6 +452,26 @@ document.getElementById('returnbutton').addEventListener('click', () => {
             map.on('mouseleave', layerIds, () => {
             map.getCanvas().style.cursor = '';
             });
+
+//Configuring Pop-Ups for Subway Stations
+    map.on('click', 'ttc', (e) => {
+        console.log(e); 
+        var ttc_pop_up = new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML("<b>" + e.features[0].properties.STATION + " Station" + "</b>" 
+                + '<br>' + "<b>" + 'Line: ' + "</b>" + e.features[0].properties.LINE )
+            .addTo(map);
+        });
+
+    // Change the cursor to a pointer when the mouse is over the layer
+        map.on('mouseenter', 'ttc', () => {
+        map.getCanvas().style.cursor = 'pointer';
+        });
+             
+    // Change the cursor back to a pointer
+        map.on('mouseleave', 'ttc', () => {
+        map.getCanvas().style.cursor = '';
+        });
 
 
 // /*--------------------------------------------------------------------
@@ -517,18 +556,32 @@ document.getElementById('suncheck').addEventListener('change', (e) => {
 });
 
 // /*--------------------------------------------------------------------
-// Filtering TTC Subway Locations
+// Filtering TTC Subway Locations and Walking Buffers
 // --------------------------------------------------------------------*/
-// Add a variable to store the state of the checkbox
+// Add a variable to store the TTC checkbox state
 var ttc_checkbox = document.getElementById('ttccheck')
 
-//Attach event listener to the checkbox
+//Attach Event listener to the TTC Checkbox
 document.getElementById('ttccheck').addEventListener('change', function() {
   ttc_checkbox.addEventListener('change', function() {
     if (this.checked) {
       map.setLayoutProperty('ttc', 'visibility', 'visible'); // Show layer when checkbox is checked
     } else {
       map.setLayoutProperty('ttc', 'visibility', 'none'); // Hide layer when checkbox is unchecked
+    }
+  });
+});
+
+// Add a variable to store the state of the checkbox
+var walking_checkbox = document.getElementById('walkcheck')
+
+//Attach event listener to the checkbox
+document.getElementById('walkcheck').addEventListener('change', function() {
+  walking_checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      map.setLayoutProperty('walking_circle', 'visibility', 'visible'); // Show layer when checkbox is checked
+    } else {
+      map.setLayoutProperty('walking_circle', 'visibility', 'none'); // Hide layer when checkbox is unchecked
     }
   });
 });

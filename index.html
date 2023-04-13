@@ -22,6 +22,9 @@
    
      <!-- CSS Style Sheet Link -->
     <link rel="stylesheet" href="index-style.css">
+
+    <!-- Turf.js -->
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
 </head>
 
 <body>
@@ -168,6 +171,13 @@
         <input class="form-check-input" type="checkbox" value="" id="ttccheck" unchecked>
         <label class="form-check-label" for="flexCheckChecked">
             TTC Subway Stations
+        </label>
+    </div>
+    <!-- Walking Distance Filter -->
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="walkcheck" unchecked>
+        <label class="form-check-label" for="flexCheckChecked">
+            10-minute Walk from Subway
         </label>
     </div>
   </div>
