@@ -24,11 +24,11 @@ const map = new mapboxgl.Map({
 Setting Up Accessible Food Geojson Variable
 --------------------------------------------------------------------*/
 //Empty variables to store Collision Data Responses from Fetch Function 
-//Food Support Locations 
-let foodresources_geojson;
+    //Food Support Locations 
+    let foodresources_geojson;
 
-//TTC Subway station stops 
-let subway_geojson;
+    //TTC Subway station stops 
+    let subway_geojson;
 
 // Food Support Locations -- Fetch GeoJSON from URL for and store response
 fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/food_support_locations_clean.geojson')
@@ -38,7 +38,7 @@ fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/food_
         foodresources_geojson = response1; // Store geojson as variable using URL from fetch response
     });
 
-// Food Support Locations -- Fetch GeoJSON from URL for and store response
+// TTC Subway Locations -- Fetch GeoJSON from URL for and store response
 fetch('https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/ttc_subway_stations.geojson')
     .then(response2 => response2.json())
     .then(response2 => {
@@ -81,7 +81,7 @@ map.loadImage(
                 'icon-image': 'ttc_point', // reference image
                 'icon-size': 0.4, // smaller sizes than food resources to prevent distraction
                 'icon-allow-overlap': true, // allow overlapping icons 
-                'visibility': 'none'
+                'visibility': 'none' //start with visibility off and toggled on by checkboxes
             },
             
         });
@@ -102,13 +102,13 @@ map.addLayer({
     "type": "fill",
     "source": "walkability",
     "paint": {
-        'fill-color': "#9400ca",
-        'fill-opacity': 0.2,
+        'fill-color': "#9400ca", //purple colour for walking radius to prevent confusion with other symbology 
+        'fill-opacity': 0.2, // reduce opacity to minimize distraction away from main data
         'fill-outline-color': "#9400ca"
     },
 });
 
-map.setLayoutProperty('walking_circle', 'visibility', 'none')
+map.setLayoutProperty('walking_circle', 'visibility', 'none') // visibility none -- had to move outside of layer because visibility functionality inside was being finicky
 
 //MONDAY - Adding Layer for Food Support Open on Monday
 //Note: Some points will be repeated between layer because they are open multiple days
@@ -424,18 +424,19 @@ document.getElementById('returnbutton').addEventListener('click', () => {
             let access = e.features[0].properties.USER_acces;
             let target = e.features[0].properties.USER_targe;
 
+          //Pop Up Layout  
             var pop_up = new mapboxgl.Popup({className: "food_popups"})
                 .setLngLat(e.lngLat)
                 .setHTML("<b>" + name + "</b>" 
-                    + '<br>' + ' ' 
+                    + '<br>' + ' '  
                     + '<br>' + "<b>" + 'Address: ' + "</b>" + address_name + ", " + postal_code
-                    + '<br>' + '<a href="' + "https://www.google.com/maps/place/" + address_name + ", " + postal_code + '" target="_blank">' + "Directions on Google Maps" + '</a>' 
+                    + '<br>' + '<a href="' + "https://www.google.com/maps/place/" + address_name + ", " + postal_code + '" target="_blank">' + "Directions on Google Maps" + '</a>' //Automatically input address into Google Maps domain/filepath for easy navigation
                     + '<br>' + "<b>" + 'Services: ' + "</b>" + services
                     + '<br>' + "<b>" + 'Operating Hours: ' + "</b>" + hours
                     + '<br>' + "<b>" + 'Appointment Required: ' + "</b>" + appt
                     + '<br>' + "<b>" + 'Residency Requirements: ' + "</b>" + res_req + " (" + res_req_details + ")"
                     + '<br>' + "<b>" + 'Target Group: ' + "</b>" + target
-                    + '<br>' + "<b>" + 'Website: ' + "</b>" +  '<a href="' + website + '" target="_blank">' + website + '</a>'
+                    + '<br>' + "<b>" + 'Website: ' + "</b>" +  '<a href="' + website + '" target="_blank">' + website + '</a>' //hyperlinking website
                     + '<br>' + "<b>" + 'Contact: ' + "</b>" + contact
                     + '<br>' + "<b>" + 'Wheelchair Accessible: ' + "</b>" + access)
                 .addTo(map);
@@ -558,34 +559,28 @@ document.getElementById('suncheck').addEventListener('change', (e) => {
 // /*--------------------------------------------------------------------
 // Filtering TTC Subway Locations and Walking Buffers
 // --------------------------------------------------------------------*/
-// Add a variable to store the TTC checkbox state
-var ttc_checkbox = document.getElementById('ttccheck')
+let ttc = true;
+let buffer = true;
 
-//Attach Event listener to the TTC Checkbox
-document.getElementById('ttccheck').addEventListener('change', function() {
-  ttc_checkbox.addEventListener('change', function() {
-    if (this.checked) {
-      map.setLayoutProperty('ttc', 'visibility', 'visible'); // Show layer when checkbox is checked
-    } else {
-      map.setLayoutProperty('ttc', 'visibility', 'none'); // Hide layer when checkbox is unchecked
-    }
-  });
+//Filter for TTC
+document.getElementById('ttccheck').addEventListener('change', (e) => {
+    ttc = !ttc;
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'ttc',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
 });
 
-// Add a variable to store the Walking Buffer checkbox
-var walking_checkbox = document.getElementById('walkcheck')
-
-//Attach event listener to the checkbox
-document.getElementById('walkcheck').addEventListener('change', function() {
-  walking_checkbox.addEventListener('change', function() {
-    if (this.checked) {
-      map.setLayoutProperty('walking_circle', 'visibility', 'visible'); // Show layer when checkbox is checked
-    } else {
-      map.setLayoutProperty('walking_circle', 'visibility', 'none'); // Hide layer when checkbox is unchecked
-    }
-  });
+//Filter for TTC
+document.getElementById('walkcheck').addEventListener('change', (e) => {
+    buffer = !buffer;
+    map.setLayoutProperty( // change the visiblity of the layer of data
+        'walking_circle',
+        'visibility',
+        e.target.checked ? 'visible' : 'none'
+    )
 });
-
 
 // /*--------------------------------------------------------------------
 // Filtering Service Type
