@@ -6,7 +6,7 @@
 /* Map Formatting -- Fill page and arrnage to back */
 .map {
     position: absolute;
-    top: 2%;
+    top: 7%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -25,13 +25,14 @@
     padding: 10px; /*around elements inside of overlay*/
     max-width: fit-content;
     overflow: visible;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Geocoder Formatting */
 .geocoder {
   position: relative;
   margin: 10px 0 10px;
+  z-index: 2;
 }
 
 /* Filter Service Type Overlay */
