@@ -63,7 +63,7 @@ map.addSource('subway', {
 //Adding Icon Image for Subway Data
 ///Loading Image from external URL
 map.loadImage(
-    'https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/subway-final.png',
+    'https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/subway-legend.png',
     //Configuring Error 
     (error, image) => {
         if (error) throw error;
@@ -79,7 +79,7 @@ map.loadImage(
             'source': 'subway', // data source
             'layout': {
                 'icon-image': 'ttc_point', // reference image
-                'icon-size': 0.03, // smaller sizes than food resources to prevent distraction
+                'icon-size': 0.5, // smaller sizes than food resources to prevent distraction
                 'icon-allow-overlap': true // allow overlapping icons 
             }
         });
