@@ -63,7 +63,7 @@ map.addSource('subway', {
 //Adding Icon Image for Subway Data
 ///Loading Image from external URL
 map.loadImage(
-    'https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/subway-legend.png',
+    'https://raw.githubusercontent.com/gsamue1/ggr472-final-project/main/subway-final.png',
     //Configuring Error 
     (error, image) => {
         if (error) throw error;
@@ -79,9 +79,11 @@ map.loadImage(
             'source': 'subway', // data source
             'layout': {
                 'icon-image': 'ttc_point', // reference image
-                'icon-size': 0.5, // smaller sizes than food resources to prevent distraction
-                'icon-allow-overlap': true // allow overlapping icons 
-            }
+                'icon-size': 0.4, // smaller sizes than food resources to prevent distraction
+                'icon-allow-overlap': true, // allow overlapping icons 
+                'visibility': 'none'
+            },
+            
         });
     }
 );
@@ -512,6 +514,23 @@ document.getElementById('suncheck').addEventListener('change', (e) => {
         'visibility',
         e.target.checked ? 'visible' : 'none'
     )
+});
+
+// /*--------------------------------------------------------------------
+// Filtering TTC Subway Locations
+// --------------------------------------------------------------------*/
+// Add a variable to store the state of the checkbox
+var ttc_checkbox = document.getElementById('ttccheck')
+
+//Attach event listener to the checkbox
+document.getElementById('ttccheck').addEventListener('change', function() {
+  ttc_checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      map.setLayoutProperty('ttc', 'visibility', 'visible'); // Show layer when checkbox is checked
+    } else {
+      map.setLayoutProperty('ttc', 'visibility', 'none'); // Hide layer when checkbox is unchecked
+    }
+  });
 });
 
 

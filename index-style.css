@@ -35,7 +35,7 @@
 }
 
 /* Filter Service Type Overlay */
-.filter-service-box {
+/* .filter-service-box {
   position: relative;
   font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   background: rgba(255, 255, 255, 0.8);
@@ -47,7 +47,7 @@
   overflow: visible;
   max-width: fit-content;
   z-index: 1;
-}
+} */
 
 /* Filter Overlay */
 .filter-time-box {
@@ -56,6 +56,20 @@
   background: rgba(255, 255, 255, 0.8);
   width: 260px;
   top: 60%;
+  left: 2%;
+  margin: 10px 0 0 10px;
+  padding: 10px;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Filter Service Type Overlay */
+.filter-ttc-box {
+  position: relative;
+  font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background: rgba(255, 255, 255, 0.8);
+  width: 260px;
+  top: 80%;
   left: 2%;
   margin: 10px 0 0 10px;
   padding: 10px;
