@@ -1,75 +1,101 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    margin: 0;
+Navigation Bar Formatting -- Moving Nav Bar in Front
+.navbar {
+  z-index: 5; 
+}
+
+
+/* Additional Info Section */
+.about-section {
+  padding: 30px;
+  text-align: center;
+  background-color: #2A9D8F;
+  color: white;
+}
+
+/* Header Title */
+.about-section h1 {
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Header Description */
+.about-section p {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Body of Webpage Colour */
+body{
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Question Formatting */
+details{
+  background-color: white;
+  color: #2A9D8F;
+  font-size: 24px;
+}
+
+/* Food Support Service Type Headers Formatting */
+.hd {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    color: #264653;
+  }
+  
+/* Answer Paragraph Formatting */
+  .pg {
+    margin-left: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0e0e0e;
+    margin-top: 5px;
   }
 
-  .names {
-    color: #264653;
-    outline-width: 25%;
-    outline-color: #264653;
-  }
-  
-  html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  .column {
-    float: left;
-    width: 49.9%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-  
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
-  }
-  
-  .header {
-    padding: 50px;
-    text-align: center;
-    background-color: #2A9D8F;
-    color: white;
-  }
-  
-  .container {
-    padding: 0 16px;
-  }
-  
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .title {
-    color: grey;
-  }
-  
-  /* .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #2A9D8F;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .button:hover {
-    background-color: #555;
-  } */
-  
-  @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
-    }
-  }
+/* Additional Links */
+.support-link{
+  color: #264653;
+  font-size: 14px;
+}
+
+/* Formatting of Question Drop Down */
+summary {
+  padding: 0.5em 1.3rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;  
+  transition: height 1s ease;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:after{
+  content: "\002B";
+}
+
+details[open] summary {
+    border-bottom: 1px solid white;
+    margin-bottom: .5em;
+}
+
+details[open] summary:after{
+  content: "\00D7";
+}
+
+details[open] div{
+  padding: .5em 1em;
+}
+
+/* Formatting for Hover over Hyperlinks */
+a:hover {
+  text-decoration: underline;
+}
