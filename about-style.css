@@ -3,6 +3,30 @@
   z-index: 5; 
 }
 
+/* Header Sectio Formatting */
+.about-section {
+  padding: 30px;
+  text-align: center;
+  background-color: #2A9D8F;
+  color: white;
+}
+
+/* Header Title Formatting */
+.about-section h1 {
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Header Description Formatting */
+.about-section p {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -34,13 +58,6 @@ body {
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
-  }
-  
-  .about-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #2A9D8F;
-    color: white;
   }
   
   .container {
