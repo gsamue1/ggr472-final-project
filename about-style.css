@@ -26,28 +26,31 @@
   font-weight: 500;
 }
 
-
-
+/* General Body Text Formatting */
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     margin: 0;
   }
 
+  /* Formating Names */
   .names {
     color: #264653;
     outline-width: 25%;
     outline-color: #264653;
   }
   
+  /* Set box-sizing property for HTML elemetns */
   html {
     box-sizing: border-box;
   }
   
+  /* Inherit box-sizing property for all elements */
   *, *:before, *:after {
     box-sizing: inherit;
   }
   
+  /* Defining Column Properties for Responsive Design */
   .column {
     float: left;
     width: 49.9%;
@@ -55,25 +58,30 @@ body {
     padding: 0 8px;
   }
   
+  /* Formatting Cards */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
   }
   
+  /* Define Container Properties */
   .container {
     padding: 0 16px;
   }
   
+  /* Clear Floats and Preserves Order -- Add Content After COntainer and Row Elements */
   .container::after, .row::after {
     content: "";
     clear: both;
     display: table;
   }
   
+  /* Set Colour for Title */
   .title {
     color: grey;
   }
   
+  /* Define Responsive Design for screens less than 650px */
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;

@@ -1,8 +1,9 @@
-Navigation Bar Formatting -- Moving Nav Bar in Front
+
+
+/* Navigation Bar Formatting -- Moving Nav Bar in Front */
 .navbar {
   z-index: 5; 
 }
-
 
 /* Header Section */
 .about-section {
@@ -109,4 +110,12 @@ details[open] div{
 /* Formatting for Hover over Hyperlinks */
 a:hover {
   text-decoration: underline;
+}
+
+ /* Define Responsive Design for screens less than 650px */
+ @media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
 }

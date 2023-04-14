@@ -50,7 +50,7 @@
   z-index: 1;
 } */
 
-/* Filter Overlay */
+/* Opening Time Filter Overlay */
 .filter-time-box {
   position: relative;
   font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -64,7 +64,7 @@
   z-index: 1;
 }
 
-/* Filter Service Type Overlay */
+/* Filter TTC and Walking Distance Overlay */
 .filter-ttc-box {
   position: relative;
   font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -153,4 +153,10 @@
     padding: 10px 20px;
   }
 
-  
+   /* Define Responsive Design for screens less than 650px */
+   @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
