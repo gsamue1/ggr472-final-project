@@ -1,0 +1,88 @@
+
+
+/* Navigation Bar Formatting -- Moving Nav Bar in Front */
+.navbar {
+  z-index: 5; 
+}
+
+/* Header Section */
+.about-section {
+  padding: 30px;
+  text-align: center;
+  background-color: #2A9D8F;
+  color: white;
+}
+
+/* Header Title */
+.about-section h1 {
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Header Description */
+.about-section p {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Image Formating */
+.group img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Formatting for Captions */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+/* Set box-sizing property for HTML elemetns */
+html {
+  box-sizing: border-box;
+}
+  
+/* Inherit box-sizing property for all elements */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Defining Column Properties for Responsive Design */
+.column {
+  float: left;
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+/* Formatting Cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+
+/* Define Container Properties */
+  .container {
+    padding: 0 16px;
+  }
+  
+/* Clear Floats and Preserves Order -- Add Content After COntainer and Row Elements */
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+/* Define Responsive Design for screens less than 650px */
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
