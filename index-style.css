@@ -110,6 +110,7 @@
   list-style: none;
   }
 
+/* Legend Scale */
 .my-legend .legend-scale ul li {
   position: relative;
   font-size: 80%;
@@ -118,6 +119,8 @@
   line-height: 18px;
   margin-bottom: 2px;
   }
+
+/* Legend Labels */
 .my-legend ul.legend-labels li span {
   position: relative;
   display: block;
@@ -136,17 +139,20 @@
   color: #999;
   clear: both;
   }
+
+/* Hyperlink to Data Sources */
 .my-legend a {
   color: #777;
   }
 
+/* Drop Shadow Formatting */
   .polaroid {
     width: 80%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
   }
-  
+/* Container Formating */
   .container {
     text-align: center;
     padding: 10px 20px;
