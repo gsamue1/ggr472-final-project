@@ -107,11 +107,6 @@ details[open] div{
   /* Margins in relative units */
 }
 
-/* Formatting for Hover over Hyperlinks */
-a:hover {
-  text-decoration: underline;
-}
-
  /* Define Responsive Design for screens less than 650px */
  @media screen and (max-width: 650px) {
   .column {
