@@ -4,7 +4,7 @@ Navigation Bar Formatting -- Moving Nav Bar in Front
 }
 
 
-/* Additional Info Section */
+/* Header Section */
 .about-section {
   padding: 30px;
   text-align: center;
@@ -68,31 +68,42 @@ details{
 /* Formatting of Question Drop Down */
 summary {
   padding: 0.5em 1.3rem;
-  list-style: none;
+  list-style: none; 
+  /* Removing Default List Style Bullet Points */
   display: flex;
+  /* Specifiy flex container */
   justify-content: space-between;  
+  /* Places answer under question with some space between */
   transition: height 1s ease;
+  /* Applies a transition effect to height over a 1 sec duration with easing fn */
 }
 
+/* Hide Default Bullet Point Marker for the Question/Answer (Summary/Detail) Elements */
 summary::-webkit-details-marker {
   display: none;
 }
 
+/* Adding Plus Sign After Summary Text to Indicate Expansion Capacity */
 summary:after{
   content: "\002B";
 }
 
+/* Adds Bottom Border to Question When Answer is Open */
 details[open] summary {
     border-bottom: 1px solid white;
-    margin-bottom: .5em;
+    margin-bottom: .5em; 
+    /* Margins in relative units */
 }
 
+/* Changes Plus Sign to X when element is open to indicate clicking closes */
 details[open] summary:after{
   content: "\00D7";
 }
 
+/* Adding padding to the detail element when it is open */
 details[open] div{
   padding: .5em 1em;
+  /* Margins in relative units */
 }
 
 /* Formatting for Hover over Hyperlinks */
