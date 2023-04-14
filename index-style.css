@@ -6,7 +6,7 @@
 /* Map Formatting -- Fill page and arrnage to back */
 .map {
     position: absolute;
-    top: 7%;
+    top: 5%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -139,7 +139,6 @@
 .my-legend a {
   color: #777;
   }
-
 
   .polaroid {
     width: 80%;
